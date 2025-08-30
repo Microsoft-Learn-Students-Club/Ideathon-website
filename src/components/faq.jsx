@@ -5,23 +5,19 @@ import { ChevronDown } from "lucide-react";
 const faqs = [
   {
     question: "Question 1",
-    answer:
-      "Answer 1",
+    answer: "Answer 1",
   },
   {
     question: "Question 2",
-    answer:
-      "Answer 2",
+    answer: "Answer 2",
   },
   {
     question: "Question 3",
-    answer:
-      "Answer 3",
+    answer: "Answer 3",
   },
   {
     question: "Question 4",
-    answer:
-      "Answer 4",
+    answer: "Answer 4",
   },
 ];
 
@@ -34,7 +30,7 @@ export default function FAQSection() {
 
   return (
     <div className="max-w-2xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-bold text-center mb-10 tracking-tight">
+      <h2 className="text-3xl font-bold text-center mb-10 tracking-tight" id="faqs">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">

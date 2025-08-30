@@ -1,16 +1,20 @@
 import React from "react";
-import Faq from "./components/faq";
-import Footer from "./components/footer";
-import Navbar from "./components/navbar";
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Faq from "./components/Faq";
+import Footer from "./components/Footer";
+import Navbar from "./components/Navbar";
+import ShortlistedTeams from "./components/ShortlistedTeams";
+import Home from "./pages/Home";
 
-export default function App(){
-  return(
-    <>
-    <Navbar/>
-    <div>Hello</div>
-    <p className="font-bold text-black">Bold</p>
-    <Faq/>
-    <Footer/>
-    </>
-  )
+export default function App() {
+  return (
+    <Router>
+      <Navbar />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
+      </Routes>
+      <Footer />
+    </Router>
+  );
 }
