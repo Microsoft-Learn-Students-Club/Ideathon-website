@@ -1,12 +1,23 @@
-# React + Vite
+# Ideathon Hackathon
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+## Getting Started
 
-Currently, two official plugins are available:
+Follow these steps to clone and run the project locally:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+### 1. Clone the repository
 
-## Expanding the ESLint configuration
+```bash
+git clone https://github.com/Microsoft-Learn-Students-Club/Ideathon-website.git
+cd Ideathon-website
+```
 
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and [`typescript-eslint`](https://typescript-eslint.io) in your project.
+### 2. Install the dependencies
+
+```bash
+npm install
+npm run dev
+```
+
+### Contribution Guidelines
+
+Please do not push directly to the main branch.
