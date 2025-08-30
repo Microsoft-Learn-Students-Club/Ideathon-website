@@ -29,8 +29,8 @@ export default function FAQSection() {
   };
 
   return (
-    <div className="max-w-2xl mx-auto py-16 px-4">
-      <h2 className="text-3xl font-bold text-center mb-10 tracking-tight" id="faqs">
+    <div className="max-w mx-auto py-16 px-10 pb-30 bg-gray-900 md:px-50">
+      <h2 className="text-3xl font-bold text-center mb-10 tracking-tight text-white" id="faqs">
         Frequently Asked Questions
       </h2>
       <div className="space-y-4">
