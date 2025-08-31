@@ -4,8 +4,9 @@
 
 import { useEffect, useRef, useState } from "react";
 import { gsap } from "gsap";
-
-const DEFAULT_ITEMS = [
+import { NAV_LINKS } from "../../../constants";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+/*const DEFAULT_ITEMS = [
   {
     label: "home",
     id: "home", type: "scroll",
@@ -41,7 +42,7 @@ const DEFAULT_ITEMS = [
     rotation: -8,
     hoverStyles: { bgColor: "#8b5cf6", textColor: "#ffffff" },
   },
-];
+];*/
 
 export default function BubbleMenu({
   logo,
@@ -64,7 +65,33 @@ export default function BubbleMenu({
   const bubblesRef = useRef([]);
   const labelRefs = useRef([]);
 
-  const menuItems = items?.length ? items : DEFAULT_ITEMS;
+  const menuItems = items?.length ? items : NAV_LINKS;
+
+  const location = useLocation();
+    const navigate = useNavigate();
+  
+    const handleScroll = (id) => {
+      setIsMenuOpen(false); // close menu after click
+      if (location.pathname !== "/") {
+        navigate("/", { state: { scrollTo: id } });
+      } else {
+        scrollToSection(id);
+      }
+    };
+  
+    const scrollToSection = (id) => {
+      const element = document.getElementById(id);
+      if (element) {
+        element.scrollIntoView({ behavior: "smooth" });
+      }
+    };
+  
+    useEffect(() => {
+      if (location.state?.scrollTo) {
+        const el = document.getElementById(location.state.scrollTo);
+        if (el) el.scrollIntoView({ behavior: "smooth" });
+      }
+    }, [location]);
 
   const containerClassName = [
     "bubble-menu",
@@ -74,6 +101,7 @@ export default function BubbleMenu({
     "gap-4 px-8",
     "pointer-events-none",
     "z-[1001]",
+    "sticky",
     className,
   ]
     .filter(Boolean)
@@ -167,6 +195,7 @@ export default function BubbleMenu({
         }
         .bubble-menu-items .pill-list .pill-col:nth-child(4):nth-last-child(2) {
           margin-left: calc(100% / 6);
+          max-height: 30px;
         }
         .bubble-menu-items .pill-list .pill-col:nth-child(4):last-child {
           margin-left: calc(100% / 3);
@@ -174,6 +203,7 @@ export default function BubbleMenu({
         @media (min-width: 900px) {
           .bubble-menu-items .pill-link {
             transform: rotate(var(--item-rot));
+            min-height: 50px !important;
           }
           .bubble-menu-items .pill-link:hover {
             transform: rotate(var(--item-rot)) scale(1.06);
@@ -200,12 +230,12 @@ export default function BubbleMenu({
           .bubble-menu-items .pill-link {
             font-size: clamp(1.2rem, 3vw, 4rem);
             padding: clamp(1rem, 2vw, 2rem) 0;
-            min-height: 80px !important;
+            min-height: 50px !important;
           }
           .bubble-menu-items .pill-link:hover {
             transform: scale(1.06);
-            background: var(--hover-bg);
-            color: var(--hover-color);
+            background: var(--hover-bg) !important;
+            color: var(--hover-color) !important;
           }
           .bubble-menu-items .pill-link:active {
             transform: scale(.94);
@@ -226,7 +256,7 @@ export default function BubbleMenu({
             "bg-white",
             "shadow-[0_4px_16px_rgba(0,0,0,0.12)]",
             "pointer-events-auto",
-            "h-12 md:h-14",
+            "h-10 md:h-12",
             "px-4 md:px-8",
             "gap-2",
             "will-change-transform",
@@ -333,18 +363,19 @@ export default function BubbleMenu({
           >
             {menuItems.map((item, idx) => (
               <li
-                key={idx}
+                key={item.id}
                 role="none"
                 className={[
                   "pill-col",
                   "flex justify-center items-stretch",
                   "[flex:0_0_calc(100%/3)]",
                   "box-border",
+                  "cursor-pointer"
                 ].join(" ")}
               >
-                <a
+                <button
                   role="menuitem"
-                  href={item.href}
+                  onClick={() => handleScroll(item.id)}
                   aria-label={item.ariaLabel || item.label}
                   className={[
                     "pill-link",
@@ -385,7 +416,7 @@ export default function BubbleMenu({
                   }}
                 >
                   <span
-                    className="pill-label inline-block"
+                    className="pill-label inline-block cursor-pointer"
                     style={{
                       willChange: "transform, opacity",
                       height: "1.2em",
@@ -397,7 +428,7 @@ export default function BubbleMenu({
                   >
                     {item.label}
                   </span>
-                </a>
+                </button>
               </li>
             ))}
           </ul>
