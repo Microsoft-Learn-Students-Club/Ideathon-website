@@ -1,7 +1,28 @@
 import React from "react";
 import TiltedPill from "./TiltedPill";
 
-const GroovyConnector = ({ color = "gray", height = 40}) => {
+// const GroovyConnector = ({ color = "gray", height = 40}) => {
+//   return (
+//     <svg
+//       width="40"
+//       height={height}
+//       viewBox={`0 0 40 ${height}`}
+//       fill="none"
+//       xmlns="http://www.w3.org/2000/svg"
+//       className="mx-auto"
+//     >
+//       <path
+//         d={`M20 0 Q 30 ${height / 4}, 20 ${height / 2} T 20 ${height}`}
+//         stroke={color}
+//         strokeWidth="2"
+//         strokeDasharray="6 6"
+//         fill="transparent"
+//       />
+//     </svg>
+//   );
+// };
+
+const GroovyConnector = ({ height = 40 }) => {
   return (
     <svg
       width="40"
@@ -13,14 +34,22 @@ const GroovyConnector = ({ color = "gray", height = 40}) => {
     >
       <path
         d={`M20 0 Q 30 ${height / 4}, 20 ${height / 2} T 20 ${height}`}
-        stroke={color}
-        strokeWidth="2"
-        strokeDasharray="6 6"
-        fill="transparent"
-      />
+        stroke="#facc15"
+        strokeWidth="3"
+        strokeDasharray="8 6"
+        strokeLinecap="round"
+      >
+        <animate
+          attributeName="stroke-dashoffset"
+          values="0;14"
+          dur="2s"
+          repeatCount="indefinite"
+        />
+      </path>
     </svg>
   );
 };
+
 
 const Timeline = () => {
   return (
