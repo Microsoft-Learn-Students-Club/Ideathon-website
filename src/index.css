@@ -1,6 +1,71 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Serif+Text:ital@0;1&family=Mona+Sans:ital,wght@0,200..900;1,200..900&display=swap");
 @import "tailwindcss";
+
+@font-face {
+    font-family: "Modern Negra";
+    src: url("/Modern Negra Demo.ttf") format("truetype");
+}
+
+@theme {
+    --color-yellow: #e7d393;
+    --color-white-100: #efefef;
+    --font-sans: "Mona Sans", sans-serif;
+    --font-modern-negra: "Modern Negra", sans-serif;
+    --font-serif: "DM Serif Text", serif;
+}
 
 :root {
     background-color: black;
     color: white;
 }
+
+.noisy {
+        @apply absolute inset-0 size-full bg-[url("/noise.png")];
+    }
+
+.info {
+    @apply space-y-4 lg:translate-y-20;
+    #title {
+            @apply font-modern-negra md:text-6xl text-3xl text-yellow max-w-40;
+        }
+    }
+
+    #hero {
+        @apply relative z-10 min-h-dvh w-full border border-transparent;
+
+        h1 {
+            @apply md:mt-32 mt-40 text-8xl lg:pr-30 lg:pl-30 md:text-[15vw] leading-none text-center font-serif;
+        }
+
+        .body {
+            @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
+
+            .content {
+                @apply flex lg:flex-row flex-col pt-55 w-full gap-10 justify-between items-center lg:items-end mx-auto;
+
+                p:nth-of-type(2) {
+                    @apply font-modern-negra pt-10 pb-10 text-6xl text-yellow max-w-xl;
+                }
+
+                p:last-of-type {
+                    @apply 2xl:text-start text-center;
+                }
+
+                .view-right {
+                    @apply space-y-5 text-lg pb-20 lg:max-w-2xs md:max-w-xs w-full;
+
+                    p {
+                        @apply text-left;
+                    }
+
+                    a {
+                        @apply font-semibold opacity-80 2xl:text-start text-center hover:text-yellow;
+                    }
+                }
+            }
+        }
+     }
+
+     video {
+        @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+    }

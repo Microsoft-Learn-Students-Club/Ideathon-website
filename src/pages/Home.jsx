@@ -10,7 +10,7 @@ import Hero from '../components/Hero';
 const Home = () => {
     return (
         <>
-            <div id="home" className="min-h-screen flex items-center justify-center bg-black text-white">
+            <div id="home" className="min-h-screen min-w-full flex items-center justify-center bg-black text-white">
                 <Hero />
             </div>
             <div id="about">
