@@ -1,5 +1,5 @@
 import React from 'react';
-import Faq from '../components/Faq';
+import Faq from '../components/faq';
 import Timeline from '../components/Timeline';
 import Domains from '../components/Domains';
 import Prizes from '../components/Prizes';

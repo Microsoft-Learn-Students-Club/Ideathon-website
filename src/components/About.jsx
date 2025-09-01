@@ -1,77 +1,100 @@
-import { useState } from "react";
-import "./About.css";
+import React from 'react';
+import { motion } from 'framer-motion';
+import pin from "../assets/about/pin.png";
+import redclip from "../assets/about/redclip.png";
+import blueclip from "../assets/about/blueclip.png";
+import mlsclogo from "../assets/about/mlsclogo.png";
+import ideathonLogo from "../assets/about/ideathon.png";
 
 const About = () => {
-    const bgColors = ["teal", "cyan", "orange", "red"];
-    const fillColors = ["cyan", "mint", "yellow", "orange"];
-
-    const [colorIndex, setColorIndex] = useState(0);
-    const [restoreTask, setRestoreTask] = useState(null);
-    const [isMobileView, setView] = useState(window.matchMedia("(width < 40rem)").matches);
-
-    const restore = () => {
-        if (restoreTask !== null) clearTimeout(restoreTask);
-        setRestoreTask(setTimeout(() => {
-            setRestoreTask(null);
-            setColorIndex(0);
-        }, 200));
-    };
-
-    const modifyColorIndex = (newColorIndex) => {
-        if (isMobileView) return;
-        if (restoreTask !== null) clearTimeout(restoreTask);
-        setRestoreTask(null);
-        setColorIndex(newColorIndex);
-    }
-
-    window.matchMedia("(width < 40rem)").addEventListener('change', e => setView(e.matches));
-
     return (
-        <div id="about" className={`relative h-screen flex items-center justify-center bg-${bgColors[colorIndex]}`}>
-            <div className="z-1 text-center max-w-2xl m-8 sm:p-8 sm:bg-black/50 sm:rounded-lg">
-                <h2 className="header text-4xl font-bold text-cream mb-16">About</h2>
-                <p className="text-cream text-justify text-lg font-bold">
-                    Welcome to our annual hackathon! This event brings 
-                    together <span onMouseEnter={() => modifyColorIndex(1)} onMouseLeave={restore} className="text-mint">students</span>
-                    , <span onMouseEnter={() => modifyColorIndex(2)} onMouseLeave={restore} className="text-yellow">developers</span>, 
-                    and <span onMouseEnter={() => modifyColorIndex(3)} onMouseLeave={restore} className="text-orange">creators</span> from 
-                    all backgrounds to build, learn, and innovate. Our goal is to foster a collaborative environment where you can turn your ideas into reality. Whether you're a seasoned programmer or just starting, our hackathon is the perfect place to challenge yourself and connect with like-minded individuals. We believe that great ideas can come from anywhere, and we're excited to see what you create.
-                </p>
-            </div>
-            <svg
-                viewBox="0 0 1440 490"
-                xmlns="http://www.w3.org/2000/svg"
-                className="absolute top-0 transition duration-150 ease-in-out"
-            >
-                <path
-                    d="M 0,500 L 0,93 C 97.51196172248802,101.3732057416268 195.02392344497605,109.7464114832536 303,105 C 410.97607655502395,100.2535885167464 529.4162679425838,82.38755980861244 621,72 C 712.5837320574162,61.61244019138756 777.3110047846891,58.70334928229666 856,75 C 934.6889952153109,91.29665071770334 1027.33971291866,126.79904306220095 1127,133 C 1226.66028708134,139.20095693779905 1333.33014354067,116.10047846889952 1440,93 L 1440,500 L 0,500 Z"
-                    stroke="none"
-                    stroke-width="0"
-                    fill-opacity="0.4"
-                    className={`fill-${fillColors[colorIndex]} transition duration-150 ease-in-out path-0`}
-                    transform="rotate(-180 720 250)"
-                >
-                </path>
-                <path
-                    d="M 0,500 L 0,218 C 123.61722488038276,203.1961722488038 247.23444976076553,188.39234449760764 327,188 C 406.76555023923447,187.60765550239236 442.67942583732054,201.62679425837322 534,195 C 625.3205741626795,188.37320574162678 772.0478468899522,161.10047846889952 895,172 C 1017.9521531100478,182.89952153110048 1117.1291866028707,231.9712918660287 1204,246 C 1290.8708133971293,260.0287081339713 1365.4354066985647,239.01435406698565 1440,218 L 1440,500 L 0,500 Z"
-                    stroke="none"
-                    stroke-width="0"
-                    fill-opacity="0.53"
-                    className={`fill-${fillColors[colorIndex]} transition duration-150 ease-in-out path-1`}
-                    transform="rotate(-180 720 250)"
-                >
-                </path>
-                <path
-                    d="M 0,500 L 0,343 C 68.7846889952153,323.13397129186603 137.5693779904306,303.267942583732 249,317 C 360.4306220095694,330.732057416268 514.5071770334928,378.06220095693783 617,375 C 719.4928229665072,371.93779904306217 770.4019138755982,318.48325358851673 865,318 C 959.5980861244018,317.51674641148327 1097.885167464115,370.00478468899524 1201,383 C 1304.114832535885,395.99521531100476 1372.0574162679425,369.4976076555024 1440,343 L 1440,500 L 0,500 Z"
-                    stroke="none"
-                    stroke-width="0"
-                    fill-opacity="1"
-                    className={`fill-${fillColors[colorIndex]} transition duration-150 ease-in-out path-2`}
-                    transform="rotate(-180 720 250)"
-                >
-                </path>
-            </svg>
+        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 dark:bg-gray-800 p-8">
+            <section className='relative flex flex-col-reverse lg:flex-row items-center bg-[var(--color-orange)] border-4 border-[var(--color-black)] rounded-3xl rounded-tl-none w-full md:w-3/4 min-h-[60vh] p-8'>
+
+                {/* Section Header */}
+                <div className='absolute -top-10 md:-top-14 -left-1 bg-[var(--color-orange)] border-4 border-[var(--color-black)] w-34 h-10 md:h-14 border-b-0 rounded-t-2xl px-7 md:px-5 py-3'>
+                    <p className='text-[var(--color-cream)] font-bold text-xl md:text-2xl'>ABOUT</p>
+                </div>
+
+                {/* pin */}
+                <motion.img
+                    src={[pin]}
+                    alt="clip"
+                    key="pin"
+                    initial={{ opacity: 0, x: -50, rotate: 0 }}
+                    whileInView={{ opacity: 1, x: 0, rotate: 6 }}
+                    transition={{ duration: 0.7, type: 'spring', stiffness: 120 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="z-10 absolute top-16 md:top-20 left-10 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
+                />
+
+                {/* Blue Clip */}
+                <motion.img
+                    src={blueclip}
+                    alt="clip"
+                    key="blue"
+                    initial={{ opacity: 0, y: -50, rotate: 0 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: 6 }}
+                    transition={{ duration: 0.7, type: 'spring', stiffness: 120 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="absolute -top-16 md:-top-20 right-4 sm:left-1/2 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
+                />
+
+                <div
+                    className='absolute top-10 left-2 lg:-rotate-2 min-h-[50vh] w-[70%] lg:w-1/3 rounded-sm'
+                    style={{
+                        background: `
+                            repeating-linear-gradient(
+                                to top,
+                                rgba(0,0,0,0.1) 0px,
+                                rgba(0,0,0,0.1) 1px,
+                                rgba(255,255,255,0.5) 1px,
+                                rgba(255,255,255,0.5) 24px
+                            )
+                            `,
+                    }}
+                ></div>
+
+                {/* Content Card */}
+                <div className="z-10 lg:relative left-10 sm:-rotate-2 bg-[var(--color-cream)] text-center lg:w-2/3 p-6 rounded-xl border-3 border-[var(--color-black)] border-dashed shadow-xl">
+                    <h2 className="text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
+                        About <span className="text-[var(--color-red)]">MLSC Ideathon</span>
+                    </h2>
+                    <p className="text-gray-700 dark:text-gray-300 text-sm md:text-lg">
+                        MLSC Ideathon isn't just another event – it's where caffeine, creativity, and code collide. We bring together curious minds across tech, design, and business to solve real-world problems fast. Expect messy whiteboards, midnight breakthroughs, and the thrill of turning an idea into something tangible. Whether you're here to win, learn, or just vibe with other innovators, this is your stage to build what matters.
+                    </p>
+                </div>
+
+
+                {/* Ideathon Logo */}
+                <img
+                    src={ideathonLogo}
+                    alt="ideathon"
+                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-6 w-40 lg:w-56 mb-3"
+                />
+
+                {/* MLSC Logo */}
+                <img
+                    src={mlsclogo}
+                    alt="MLSC"
+                    className="mr-auto md:mr-0 block lg:absolute right-5 top-4 rotate-6 w-32 sm:w-48 mb-3"
+                />
+
+                {/* Red Clip */}
+                <motion.img
+                    src={redclip}
+                    alt="clip"
+                    key="red"
+                    initial={{ opacity: 0, y: 50, rotate: 180 }}
+                    whileInView={{ opacity: 1, y: 0, rotate: 190 }}
+                    transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
+                    viewport={{ once: true, amount: 0.3 }}
+                    className="absolute -bottom-16 md:-bottom-20 sm:right-20 w-20 sm:w-28 mb-3 hover:rotate-173 transition-transform duration-300"
+                />
+
+            </section>
         </div>
     );
 };
-export default About
+
+export default About;
