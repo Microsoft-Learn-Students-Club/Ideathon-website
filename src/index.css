@@ -67,5 +67,9 @@
      }
 
      video {
-        @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+        @apply w-full blur-xs md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+    }
+
+    canvas {
+        @apply w-full blur-xs md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
     }
