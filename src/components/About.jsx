@@ -25,7 +25,7 @@ const About = () => {
                     whileInView={{ opacity: 1, x: 0, rotate: 6 }}
                     transition={{ duration: 0.7, type: 'spring', stiffness: 120 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="z-10 absolute top-16 md:top-20 left-10 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
+                    className="z-10 absolute top-16 md:top-20 left-5 md:left-10 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
                 />
 
                 {/* Blue Clip */}
