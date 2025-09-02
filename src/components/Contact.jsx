@@ -5,16 +5,13 @@ export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full min-h-screen flex flex-col items-center justify-center py-12 px-6"
+      className="w-full min-h-[50vh] flex flex-col items-center justify-center py-12 px-6 bg-yellow-50 pb-40"
     >
-      {/* Header styled like "Prizes" */}
-      <div className="flex items-center w-full max-w-6xl mb-10">
-        <div className="flex-grow border-t-2 border-black"></div>
-        <span className="mx-4 text-2xl md:text-3xl font-extrabold text-yellow">
-          Reach Us
-        </span>
-        <div className="flex-grow border-t-2 border-black"></div>
-      </div>
+      <h2 className="flex mx-auto items-center text-3xl font-bold text-[var(--color-yellow)] uppercase mb-12 w-full max-w-3xl">
+        <span className="flex-grow h-[2px] bg-gray-700"></span>
+        <span className="px-6">Reach us</span>
+        <span className="flex-grow h-[2px] bg-gray-700"></span>
+      </h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl">
         {/* Left Side - Contact Info */}
@@ -34,15 +31,15 @@ export default function Contact() {
           </h4>
           <ul className="space-y-2 text-black font-medium ">
             <li>
-              Aditya Trivedi:{" "}
-              <a href="tel:+919764935361" className="underline text-maroon">
-                +91 97649 35361
+              Dnyanesh Panchal:{" "}
+              <a href="tel:+919321667147" className="underline text-maroon">
+                +91 93216 67147
               </a>
             </li>
             <li>
-              Tej More:{" "}
-              <a href="tel:+919152566703" className="underline text-maroon">
-                +91 91525 66703
+              Ayush Mayekar:{" "}
+              <a href="tel:+918657153773" className="underline text-maroon">
+                +91 86571 53773
               </a>
             </li>
           </ul>
