@@ -95,7 +95,7 @@ const Hero = () => {
           viewport={{ once: true }}
           src={mlsclogo}
           alt="logo"
-          className="block lg:absolute top-[40vh] mx-auto lg:right-100 w-30 lg:w-50 lg:rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
+          className="block lg:absolute top-[20vh] mx-auto lg:left-1/6 w-30 lg:w-30 lg:rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
         />
 
         {/*Event Logo/header*/}
@@ -104,7 +104,7 @@ const Hero = () => {
         <br />
         {/* Event Date */}
         <div
-          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-1/6 -rotate-2 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-50 w-50 align-middle text-center"
+          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-5/7 -rotate-3 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-50 w-50 align-middle text-center"
           style={{
             boxShadow: "-8px 8px 0px rgba(120, 53, 15, 0.4)",
             backgroundImage: `
