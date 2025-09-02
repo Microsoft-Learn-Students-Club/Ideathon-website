@@ -51,7 +51,7 @@
       }
 
       .view-right {
-        @apply space-y-5 text-lg pb-20 lg:max-w-2xs md:max-w-xs w-full;
+        @apply space-y-5 text-lg pb-15 lg:max-w-2xs md:max-w-xs w-full lg:mr-15;
 
         p {
           @apply text-left;
