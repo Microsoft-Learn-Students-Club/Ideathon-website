@@ -1,5 +1,4 @@
 @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
-
 @import "tailwindcss";
 
 @theme {
@@ -15,8 +14,57 @@
   --color-maroon: #9b2226;
   --color-pastel-blue: #00AED1;
   --color-pastel-pink: #D95458;
+  --color-white-100: #efefef;
+  --font-sans: "Mona Sans", sans-serif;
 }
 
 * {
   font-family: 'Poppins', sans-serif;
+}
+
+.info {
+  @apply space-y-4 lg:translate-y-20;
+  #title {
+    @apply md:text-6xl text-3xl text-yellow max-w-40;
+  }
+}
+
+#hero {
+  @apply relative z-10 min-h-dvh w-full border border-transparent;
+
+  h1 {
+    @apply md:mt-32 mt-40 text-8xl lg:pr-30 lg:pl-30 md:text-[15vw] leading-none text-center font-serif;
+  }
+
+  .body {
+    @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
+
+    .content {
+      @apply flex lg:flex-row flex-col pt-55 w-full gap-10 justify-between items-center lg:items-end mx-auto;
+
+      p:nth-of-type(2) {
+        @apply pt-10 pb-10 text-6xl text-yellow max-w-xl;
+      }
+
+      p:last-of-type {
+        @apply 2xl:text-start text-center;
+      }
+
+      .view-right {
+        @apply space-y-5 text-lg pb-20 lg:max-w-2xs md:max-w-xs w-full;
+
+        p {
+          @apply text-left;
+        }
+
+        a {
+          @apply font-semibold opacity-80 2xl:text-start text-center hover:text-yellow;
+        }
+      }
+    }
+  }
+}
+
+video {
+  @apply w-full blur-xs md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
 }
