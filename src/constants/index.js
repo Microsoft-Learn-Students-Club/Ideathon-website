@@ -9,7 +9,7 @@ export const NAV_LINKS = [
     hoverStyles: { bgColor: "#CE2012", textColor: "#ffffff" } },
   { id: "prizes", label: "Prizes", type: "scroll", rotation: 8,
     hoverStyles: { bgColor: "#94D2BD", textColor: "#ffffff" }, },
-  { id: "guidelines", label: "Guidelines", type: "scroll", rotation: -8,
+  { id: "general-guidelines", label: "Guidelines", type: "scroll", rotation: -8,
     hoverStyles: { bgColor: "#0A9396", textColor: "#ffffff" }, },
   { id: "faqs", label: "FAQs", type: "scroll", rotation: 8,
     hoverStyles: { bgColor: "#C49F31", textColor: "#ffffff" }, },
