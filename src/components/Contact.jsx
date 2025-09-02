@@ -1,10 +1,11 @@
 import React from "react";
+import { MapPin, Phone, Mail } from "lucide-react"; // lucide icons
 
 export default function Contact() {
   return (
     <section
       id="contact"
-      className="w-full min-h-screen bg- flex flex-col items-center justify-center py-12 px-6"
+      className="w-full min-h-screen flex flex-col items-center justify-center py-12 px-6"
     >
       {/* Header styled like "Prizes" */}
       <div className="flex items-center w-full max-w-6xl mb-10">
@@ -19,7 +20,8 @@ export default function Contact() {
         {/* Left Side - Contact Info */}
         <div className="flex flex-col gap-6 border-4 border-black bg-mint p-6 shadow-[8px_8px_0px_#001219] ">
           <h3 className="text-xl md:text-2xl font-bold text-black flex items-center gap-2">
-            📍 Vidyavardhini's College of Engineering and Technology
+            <MapPin size={50} className="text-black" />
+            Vidyavardhini's College of Engineering and Technology
           </h3>
           <p className="text-black leading-relaxed font-medium">
             K.T. Marg, Vartak College Campus, Vasai Road, Vasai-Virar,
@@ -27,9 +29,10 @@ export default function Contact() {
           </p>
 
           <h4 className="text-lg md:text-xl font-bold text-black mt-4 flex items-center gap-2">
-            ☎️ For Enquiries:
+            <Phone size={22} className="text-black" />
+            For Enquiries:
           </h4>
-          <ul className="space-y-2 text-black font-medium">
+          <ul className="space-y-2 text-black font-medium ">
             <li>
               Aditya Trivedi:{" "}
               <a href="tel:+919764935361" className="underline text-maroon">
@@ -44,14 +47,17 @@ export default function Contact() {
             </li>
           </ul>
 
-          <p className="mt-4 font-medium">
-            📧 Email:{" "}
-            <a
-              href="mailto:mlsc@vcet.edu.in"
-              className="underline text-pastel-pink font-bold"
-            >
-              mlsc@vcet.edu.in
-            </a>
+          <p className="mt-4 font-medium flex items-center gap-2">
+            <Mail size={22} className="text-black" />
+            <span>
+              Email:{" "}
+              <a
+                href="mailto:mlsc@vcet.edu.in"
+                className="underline text-pastel-pink font-bold"
+              >
+                mlsc@vcet.edu.in
+              </a>
+            </span>
           </p>
         </div>
 
@@ -59,7 +65,7 @@ export default function Contact() {
         <div className="border-4 border-black shadow-[8px_8px_0px_#001219] rounded-2xl overflow-hidden">
           <iframe
             title="VCET Location"
-            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.659991421949!2d72.82615867523565!3d19.383869581885122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7aec0a4b41bef%3A0xbd1a4ca919d6a613!2sVidyavardhini's%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1701160672294!5m2!1sen!2sin" 
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3763.659991421949!2d72.82615867523565!3d19.383869581885122!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3be7aec0a4b41bef%3A0xbd1a4ca919d6a613!2sVidyavardhini's%20College%20of%20Engineering%20and%20Technology!5e0!3m2!1sen!2sin!4v1701160672294!5m2!1sen!2sin"
             width="100%"
             height="100%"
             style={{ minHeight: "350px", border: "0" }}
