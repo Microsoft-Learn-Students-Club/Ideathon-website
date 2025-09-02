@@ -1,5 +1,4 @@
 import React from "react";
-import { motion } from "framer-motion";
 
 const guidelines = [
   "Each team should consist of 2–4 members. Interdisciplinary teams are encouraged.",
@@ -20,50 +19,43 @@ export default function GeneralGuidelines() {
         `,
         backgroundSize: "30px 30px"
       }}
-      className="min-h-screen flex items-center justify-center px-4 py-10 font-sans"
+      className="min-h-screen flex flex-col gap-10 items-center justify-center px-4 py-10 font-sans"
     >
+         <h2 className="flex mx-auto items-center text-3xl font-bold text-yellow uppercase mb-12 w-full max-w-3xl">
+        <span className="flex-grow h-[2px] bg-gray-700"></span>
+        <span className="px-6">General Guidelines</span>
+        <span className="flex-grow h-[2px] bg-gray-700"></span>
+      </h2>
+
       {/* Main Card */}
-      <motion.div
-        initial={{ opacity: 0, y: 40 }}
-        animate={{ opacity: 1, y: 0 }}
-        transition={{ duration: 0.6, ease: "easeOut" }}
-        className="relative bg-[var(--color-cream)] rounded-2xl p-8 pt-16 md:p-20 w-full max-w-7xl shadow-[15px_15px_0px_var(--color-orange)] border-4 border-amber-950"
-      >
+      <div className="relative bg-[var(--color-cream)] rounded-2xl p-6 pt-14 md:p-10 w-full max-w-5xl shadow-[12px_12px_0px_var(--color-orange)] border-4 border-amber-950">
+        
         {/* Tape Title */}
-        <motion.div
-          initial={{ rotate: -3, y: -10, opacity: 0 }}
-          animate={{ rotate: -2, y: 0, opacity: 1 }}
-          transition={{ duration: 0.6, ease: "easeOut" }}
-          className="absolute -top-12 sm:text-center bg-yellow left-1/2 max-w-2xl max-h-2xl -translate-x-1/2 px-6 py-6"
-        >
-          <h2 className="relative text-2xl text-center md:text-3xl font-extrabold text-amber-950 z-10">
-            General Guidelines
+        <div className="absolute -top-10 sm:text-center bg-yellow left-1/2 -translate-x-1/2  px-8 py-4">
+          <h2 className="relative text-xl text-center md:text-2xl font-extrabold text-amber-950 z-10">
+            Rules To Follow
           </h2>
           {/* Tape effect */}
-          <div className="absolute inset-0 -rotate-2 border-4 border-[var(--color-orange)] rounded-md shadow-[4px_4px_0px_var(--color-black)] -z-10"></div>
-        </motion.div>
+          <div className="absolute inset-0 -rotate-2 border-4 border-[var(--color-orange)] rounded-md shadow-[3px_3px_0px_var(--color-black)] -z-10"></div>
+        </div>
 
         {/* Guidelines List */}
-        <ul className="grid gap-6 md:gap-8 mt-6">
+        <ul className="grid gap-4 md:gap-6 mt-4">
           {guidelines.map((rule, index) => (
-            <motion.li
+            <li
               key={index}
-              initial={{ opacity: 0, x: -30 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.4, delay: index * 0.15 }}
-              whileHover={{ scale: 1.03, rotate: 1 }}
-              className="flex items-start gap-3 p-4 md:p-6 border-4 border-[var(--color-black)] rounded-xl 
-                bg-[var(--color-orange)] text-white shadow-[6px_6px_0px_var(--color-black)] 
-                transition-transform duration-200"
+              className="flex items-start gap-3 p-3 md:p-4 border-4 border-amber-900 rounded-xl 
+              bg-[var(--color-orange)] text-white shadow-[4px_4px_0px_var(--color-black)]
+              hover:-translate-y-1 hover:rotate-1 transition-transform duration-200"
             >
-              <span className="font-extrabold text-lg md:text-xl">
+              <span className="font-extrabold text-base md:text-lg">
                 {index + 1 < 10 ? `0${index + 1}` : index + 1}
               </span>
-              <span className="text-base md:text-lg">{rule}</span>
-            </motion.li>
+              <span className="text-sm md:text-base">{rule}</span>
+            </li>
           ))}
         </ul>
-      </motion.div>
+      </div>
     </div>
   );
 }
