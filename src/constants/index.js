@@ -12,7 +12,7 @@ export const NAV_LINKS = [
   { id: "guidelines", label: "Guidelines", type: "scroll", rotation: -8,
     hoverStyles: { bgColor: "#0A9396", textColor: "#ffffff" }, },
   { id: "faqs", label: "FAQs", type: "scroll", rotation: 8,
-    hoverStyles: { bgColor: "#E9D8A6", textColor: "#ffffff" }, },
+    hoverStyles: { bgColor: "#C49F31", textColor: "#ffffff" }, },
   { id: "/shortlisted-teams", label: "Shortlisted Teams", type: "link", rotation: -8,
     hoverStyles: { bgColor: "#CA6702", textColor: "#ffffff" }, },
 ];
