@@ -183,13 +183,13 @@ export default function Prizes({ amounts = {} }) {
     <section
       className="w-full"
       style={{
-        backgroundColor: "#FEFCE8", // pale yellow paper
+        backgroundColor: "#FEFCE8", 
         backgroundImage: `
       radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 1px),
       radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 1px)
     `,
-        backgroundSize: "30px 30px", // grid spacing
-        backgroundPosition: "0 0, 15px 15px", // stagger dots
+        backgroundSize: "30px 30px", 
+        backgroundPosition: "0 0, 15px 15px", 
       }}
     >
       <div className="mx-auto max-w-6xl px-4 sm:px-6 lg:px-8 py-10 sm:py-12">

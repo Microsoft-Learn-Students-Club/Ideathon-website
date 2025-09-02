@@ -37,13 +37,13 @@
   }
 
   .body {
-    @apply container mx-auto absolute left-1/2 -translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] flex justify-between items-end px-5;
+    @apply container mx-auto lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] block lg:flex justify-between items-end px-5;
 
     .content {
-      @apply flex lg:flex-row flex-col pt-55 w-full gap-10 justify-between items-center lg:items-end mx-auto;
+      @apply flex lg:flex-row flex-col pt-10 lg:pt-55 w-full gap-10 justify-between items-center lg:items-end mx-auto transition-all ease-in-out;
 
       p:nth-of-type(2) {
-        @apply pt-10 pb-10 text-6xl text-yellow max-w-xl;
+        @apply hidden lg:block pt-3 lg:pt-10 pb-10 text-2xl lg:text-6xl text-yellow max-w-xl;
       }
 
       p:last-of-type {
@@ -51,7 +51,7 @@
       }
 
       .view-right {
-        @apply space-y-5 text-lg pb-15 lg:max-w-2xs md:max-w-xs w-full lg:mr-15;
+        @apply lg:relative space-y-5 text-lg pb-15 lg:max-w-2xs md:max-w-xs w-full lg:mr-15;
 
         p {
           @apply text-left;
