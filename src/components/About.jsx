@@ -37,7 +37,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0, rotate: 6 }}
                     transition={{ duration: 0.7, type: 'spring', stiffness: 120 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="absolute -top-16 md:-top-20 right-4 sm:left-1/2 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
+                    className="absolute -top-14 md:-top-20 right-4 sm:left-1/2 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
                 />
 
                 <div
@@ -89,7 +89,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0, rotate: 190 }}
                     transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="absolute -bottom-16 md:-bottom-20 sm:right-20 w-20 sm:w-28 mb-3 hover:rotate-173 transition-transform duration-300"
+                    className="absolute -bottom-16 md:-bottom-20 sm:right-20 w-20 sm:w-28 mb-3 -rotate-15 hover:-rotate-10 transition-transform duration-300"
                 />
 
             </section>
