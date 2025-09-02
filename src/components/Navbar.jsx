@@ -1,50 +1,147 @@
-import React from 'react';
-import { Link, useLocation, useNavigate } from 'react-router-dom';
+import { useState, useEffect } from "react";
+import { Link, useLocation, useNavigate } from "react-router-dom";
+import { NAV_LINKS } from "../constants";
+import { Menu, X } from "lucide-react";
 
 const Navbar = () => {
+  const [isMenuOpen, setIsMenuOpen] = useState(false);
   const location = useLocation();
   const navigate = useNavigate();
 
-  const handleScroll = async (id) => {
-    // If the user is on a different page, navigate to the home page first
-    if (location.pathname !== '/') {
-      await navigate('/');
-    }
-
-    // Now, find the element and scroll to it
+  // Smooth scroll to section
+  const scrollToSection = (id) => {
     const element = document.getElementById(id);
     if (element) {
-      // Use setTimeout to ensure the navigation and render are complete
-      // before attempting to scroll. A small delay is a reliable workaround.
-      setTimeout(() => {
-        element.scrollIntoView({ behavior: 'smooth' });
-      }, 100);
+      element.scrollIntoView({ behavior: "smooth", block: "start" });
     }
   };
 
+  // Handle menu item click
+  const handleScroll = (id) => {
+    setIsMenuOpen(false); // close mobile menu
+    if (location.pathname !== "/") {
+      navigate("/", { state: { scrollTo: id } });
+    } else {
+      scrollToSection(id);
+    }
+  };
+
+  // Scroll after navigation if state.scrollTo exists
+  useEffect(() => {
+    if (location.state?.scrollTo) {
+      setTimeout(() => {
+        scrollToSection(location.state.scrollTo);
+      }, 100); // small delay to ensure DOM is ready
+    }
+  }, [location]);
+
   return (
-    <nav className="sticky top-0 z-50 bg-white border-gray-200 dark:bg-gray-900 shadow-lg">
-      <div className="max-w-screen-xl flex flex-wrap items-center justify-between mx-auto p-4">
-        <Link to="/" className="flex items-center space-x-3 rtl:space-x-reverse">
-          <img src="https://Ideathon.com/docs/images/logo.svg" className="h-8" alt="Ideathon Logo" />
-          <span className="self-center text-2xl font-semibold whitespace-nowrap dark:text-white">Ideathon</span>
+    <nav className="fixed w-full top-0 z-50 bg-yellow-50 shadow-md">
+      <div className="flex items-center justify-between px-6 py-3">
+        {/* Logo */}
+        <Link to="/" className="flex items-center space-x-3" aria-label="Go to homepage">
+          <img
+            src="https://tse4.mm.bing.net/th/id/OIP.uoC7cZscAU3fwDsrxAC3UgHaHa?pid=Api&P=0&h=180"
+            className="h-8 rounded-lg"
+            alt="Ideathon Event Logo"
+          />
+          <span className="self-center text-2xl font-semibold font-serif whitespace-nowrap text-black">
+            Ideathon
+          </span>
         </Link>
-        <div className="flex md:order-2 space-x-3 md:space-x-0 rtl:space-x-reverse">
-          <button type="button" className="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm px-4 py-2 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">Get started</button>
+
+        {/* Desktop Nav */}
+        <div className="hidden md:flex items-center space-x-6">
+          {NAV_LINKS.map(({ id, label, type, rotation, hoverStyles }) =>
+            type === "scroll" ? (
+              <button
+                key={id}
+                onClick={() => handleScroll(id)}
+                className={`transform hover:rotate-[${rotation}deg] font-bold cursor-pointer font-serif px-4 py-2 rounded-md transition duration-300`}
+                style={{ backgroundColor: "transparent", color: "#111" }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = hoverStyles.bgColor;
+                  e.target.style.color = hoverStyles.textColor;
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "#111";
+                }}
+              >
+                {label}
+              </button>
+            ) : (
+              <Link
+                key={id}
+                to={id}
+                className={`transform hover:rotate-[${rotation}deg] px-4 py-2 cursor-pointer rounded-md font-bold font-serif transition duration-300`}
+                style={{ backgroundColor: "transparent", color: "#111" }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = hoverStyles.bgColor;
+                  e.target.style.color = hoverStyles.textColor;
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "#111";
+                }}
+              >
+                {label}
+              </Link>
+            )
+          )}
         </div>
-        <div className="items-center justify-between hidden w-full md:flex md:w-auto md:order-1" id="navbar-cta">
-          <ul className="flex flex-col font-medium p-4 md:p-0 mt-4 border border-gray-100 rounded-lg bg-gray-50 md:space-x-8 rtl:space-x-reverse md:flex-row md:mt-0 md:border-0 md:bg-white dark:bg-gray-800 md:dark:bg-gray-900 dark:border-gray-700">
-            <li><button onClick={() => handleScroll('home')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Home</button></li>
-            <li><button onClick={() => handleScroll('about')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">About</button></li>
-            <li><button onClick={() => handleScroll('timeline')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Timeline</button></li>
-            <li><button onClick={() => handleScroll('domains')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Domains</button></li>
-            <li><button onClick={() => handleScroll('prizes')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Prizes</button></li>
-            <li><button onClick={() => handleScroll('guidelines')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Guidelines</button></li>
-            <li><button onClick={() => handleScroll('faqs')} className="block py-2 px-3 md:p-0 text-gray-900 hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">FAQs</button></li>
-            <li><Link to="/shortlisted-teams" className="block py-2 px-3 md:p-0 text-gray-900 rounded-sm hover:bg-gray-100 md:hover:bg-transparent md:hover:text-blue-700 md:dark:hover:text-blue-500 dark:text-white dark:hover:bg-gray-700 dark:hover:text-white md:dark:hover:bg-transparent dark:border-gray-700">Shortlisted Teams</Link></li>
-          </ul>
+
+        {/* Mobile Hamburger */}
+        <div className="md:hidden">
+          <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
+            {isMenuOpen ? <X size={28} className="text-black cursor-pointer" /> : <Menu size={28} className="text-black cursor-pointer" />}
+          </button>
         </div>
       </div>
+
+      {/* Mobile Dropdown */}
+      {isMenuOpen && (
+        <div className="md:hidden bg-yellow-50 shadow-lg px-6 pb-4 space-y-3">
+          {NAV_LINKS.map(({ id, label, type, rotation, hoverStyles }) =>
+            type === "scroll" ? (
+              <button
+                key={id}
+                onClick={() => handleScroll(id)}
+                className={`block w-full text-left text-xl cursor-pointer font-extrabold font-serif transform hover:rotate-[${rotation}deg] px-4 py-2 rounded-md transition duration-300`}
+                style={{ backgroundColor: "transparent", color: "#111" }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = hoverStyles.bgColor;
+                  e.target.style.color = hoverStyles.textColor;
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "#111";
+                }}
+              >
+                {label}
+              </button>
+            ) : (
+              <Link
+                key={id}
+                to={id}
+                onClick={() => setIsMenuOpen(false)}
+                className={`block transform text-xl font-extrabold font-serif hover:rotate-[${rotation}deg] px-4 py-2 rounded-md transition duration-300`}
+                style={{ backgroundColor: "transparent", color: "#111" }}
+                onMouseEnter={(e) => {
+                  e.target.style.backgroundColor = hoverStyles.bgColor;
+                  e.target.style.color = hoverStyles.textColor;
+                }}
+                onMouseLeave={(e) => {
+                  e.target.style.backgroundColor = "transparent";
+                  e.target.style.color = "#111";
+                }}
+              >
+                {label}
+              </Link>
+            )
+          )}
+        </div>
+      )}
     </nav>
   );
 };

@@ -6,12 +6,13 @@ import Prizes from '../components/Prizes';
 import GeneralGuidelines from '../components/GeneralGuidelines';
 import About from '../components/About';
 import Contact from '../components/Contact';
+import Hero from '../components/Hero';
 
 const Home = () => {
     return (
         <>
             <div id="home" className="min-h-screen flex items-center justify-center bg-white dark:bg-gray-900">
-                <h1 className="font-bold text-4xl text-black dark:text-white text-center mt-10">Welcome to the Ideathon!</h1>
+                <Hero />
             </div>
             <div id="about">
                 <About />
