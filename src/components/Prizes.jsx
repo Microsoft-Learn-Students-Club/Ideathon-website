@@ -15,9 +15,9 @@ const COLORS = {
 };
 
 const TROPHIES = {
-  "Winner": "src/assets/gold.png",
-  "Runner-up": "src/assets/silver.png",
-  "2nd Runner-up": "src/assets/bronze.png",
+  "Winner": "src/assets/prizes/gold.png",
+  "Runner-up": "src/assets/prizes/silver.png",
+  "2nd Runner-up": "src/assets/prizes/bronze.png",
 };
 
 const DEFAULT_AMOUNTS = {
