@@ -46,7 +46,7 @@ const Navbar = () => {
             alt="Ideathon Event Logo"
           />
           <span className="self-center text-2xl font-semibold font-serif whitespace-nowrap text-black">
-            Ideathon
+            NovaTra 1.0
           </span>
         </Link>
 
