@@ -111,7 +111,7 @@ const Timeline = () => {
               {stage.cardTitle}
             </h3>
             <p className="mb-3 text-base md:text-lg">{stage.desc}</p>
-            <p className="mt-4 text-sm md:text-base">
+            <p className="mt-4 text-sm md:text-lg">
               <strong>{stage.extra}</strong>
             </p>
           </div>
