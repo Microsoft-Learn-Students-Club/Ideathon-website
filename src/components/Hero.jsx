@@ -1,3 +1,6 @@
+// For Rough Notation install:
+// npm install react-rough-notation --legacy-peer-deps
+
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import RotatingText from '../blocks/RotatingText/RotatingText';
@@ -6,8 +9,24 @@ import { SplitText } from 'gsap/all';
 import { motion } from 'framer-motion';
 import Tape2 from "../assets/tape2.png";
 import mlsclogo from "../assets/about/mlsclogo.png"
+import { useEffect, useRef } from "react";
+import { annotate } from "rough-notation";
 
 const Hero = () => {
+  const dateRef = useRef(null);
+
+  useEffect(() => {
+    if (dateRef.current) {
+      const annotation = annotate(dateRef.current, {
+        type: "circle",
+        color: "var(--color-yellow)",
+        strokeWidth: 4,
+        padding: [15, 0],
+        iterations: 3,
+      });
+      annotation.show();
+    }
+  }, []);
 
   useGSAP(() => {
     const heroSplit = new SplitText('.title', { type: 'chars, words' });
@@ -44,23 +63,109 @@ const Hero = () => {
 
   return (
     <>
-      <section id="hero" className="bg-yellow-50">
-        <h1 className='title'>Ideathon 2025</h1>
+      <section id="hero" className="min-h-screen flex flex-col overflow-x-hidden">
+
+        {/* Blobs */}
+        <div className='w-100 h-100 -z-10 absolute rounded-full bg-yellow-100 scale-150'
+          style={{
+            backgroundImage: `
+          linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)
+        `,
+            backgroundSize: "20px 20px",
+          }}
+        >
+        </div>
+
+        {/* Blobs */}
+        <div className="hidden lg:block absolute w-[200px] h-[400px] -z-10 rounded-l-full right-12 top-[20%] bg-yellow-100 scale-150"
+          style={{
+            backgroundImage: `
+            linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
+            linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)
+            `,
+            backgroundSize: "20px 20px",
+          }}
+        ></div>
+
+        <motion.img
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}
+          src={mlsclogo}
+          alt="logo"
+          className="block lg:absolute top-[20vh] mx-auto lg:left-1/6 w-30 lg:w-30 lg:rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
+        />
+
+        {/*Event Logo/header*/}
+        <header className='flex flex-col title w-full text-6xl lg:text-[20vh] text-center lg:mt-[10%] mt-[0%] font-extrabold'>Ideathon <span>2025</span></header>
+
         <br />
+        {/* Event Date */}
+        <div
+          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-5/7 -rotate-3 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-50 w-50 align-middle text-center"
+          style={{
+            boxShadow: "-8px 8px 0px rgba(120, 53, 15, 0.4)",
+            backgroundImage: `
+          linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
+          linear-gradient(to bottom, rgba(0,0,0,0.08) 1px, transparent 1px)
+        `,
+            backgroundSize: "20px 20px",
+          }}
+        >
+          <div className="w-full h-10 bg-[var(--color-maroon)] border-2 border-[var(--color-maroon)] rounded-t-xl">
+            <span className="absolute left-0 w-5 h-5 m-2 rounded-full bg-black border-3 border-amber-700"></span>
+            <span className="absolute right-0 w-5 h-5 m-2 rounded-full bg-black border-3 border-amber-700"></span>
+          </div>
+          <div ref={dateRef} className="flex flex-col my-3"
+            style={{ transform: "scaleX(1.2) scaleY(1)" }}
+          >
+            <span className="my-auto text-7xl relative inline-block">
+              16
+            </span>
+            <span className="text-3xl">SEPT</span>
+          </div>
+        </div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          animate={{ opacity: 1, scale: 1 }}
+          transition={{ duration: 0.8, ease: "backOut", delay: 1 }}
+          className="w-full flex justify-center mt-8 scale-80 md:scale-100 z-50"
+        >
+          <a href="https://register-link.com" target="_blank" rel="noopener noreferrer">
+            <button
+              className="button bg-[var(--color-maroon)] border-5 border-[var(--color-black)] cursor-pointer
+        text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
+        hover:bg-amber-700 transition text-3xl uppercase
+        shadow-[6px_6px_0px_rgba(120,53,15,0.5)]"
+            >
+              Register Now!
+            </button>
+          </a>
+        </motion.div>
+
+
         <div className="body">
-          <div className="content">
-            <div className="space-y-5 hidden md:block">
-              <img src={mlsclogo} alt="logo" className="absolute -top-3 right-10 w-30 rotate-[6deg] subtitle" />
-              <p className='subtitle'><RotatingText
-                texts={['Ignite Your Idea.', 'Collaborate For Change.', 'Innovate To Impact.', 'Build The Future.']}
-                mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[#94D2BD] text-black overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-lg"
-                staggerFrom={"last"} initial={{ y: "100%" }} animate={{ y: 0 }}
-                exit={{ y: "-120%" }} staggerDuration={0.025}
-                splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
-                transition={{ type: "spring", damping: 30, stiffness: 400 }}
-                rotationInterval={2000}
-              /></p>
+          <div className="content ">
+
+            <div className="space-y-5 block">
+
               <p className='subtitle'>
+
+                <RotatingText
+                  texts={['Ignite Your Idea.', 'Collaborate For Change.', 'Innovate To Impact.', 'Build The Future.']}
+                  mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
+                  staggerFrom={"last"} initial={{ y: "100%" }} animate={{ y: 0 }}
+                  exit={{ y: "-120%" }} staggerDuration={0.025}
+                  splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
+                  transition={{ type: "spring", damping: 30, stiffness: 400 }}
+                  rotationInterval={2000}
+                />
+
+              </p>
+              <p className='subtitle text-xl lg:text-auto'>
                 Where Ideas <br /> Spark Solutions
               </p>
             </div>
@@ -71,7 +176,7 @@ const Hero = () => {
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 viewport={{ once: true }}
-                className={`relative group bg-[color:var(--color-pastel-blue)] p-6 rounded-xl border-3 border-amber-950 transition-transform duration-300`}
+                className="scale-50 lg:scale-100 hidden lg:relative bg-[color:var(--color-pastel-blue)] p-6 rounded-xl border-3 border-amber-950 transition-transform duration-300"
                 style={{
                   rotate: "3deg",
                   boxShadow: "8px 8px 0px rgba(120, 53, 15, 0.4)",
@@ -95,4 +200,4 @@ const Hero = () => {
   )
 }
 
-export default Hero
+export default Hero;
