@@ -99,14 +99,14 @@ const Hero = () => {
         />
 
         {/*Event Logo/header*/}
-        <header className='flex flex-col title w-full text-6xl lg:text-[20vh] text-center lg:mt-[10%] mt-[0%] font-extrabold'>NovaTra 1.0
-          <span className='lg:text-[8vh] text-4xl mt-2'>Bid. Pitch. Network.</span>
+        <header className='flex flex-col title w-full text-6xl lg:text-[20vh] text-center lg:mt-[10%] mt-[0%] font-extrabold'>
+          NovaTra 1.0
         </header>
 
         <br />
         {/* Event Date */}
         <div
-          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-5/7 -rotate-3 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-50 w-50 align-middle text-center"
+          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-6/8 -rotate-3 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-50 w-50 align-middle text-center"
           style={{
             boxShadow: "-8px 8px 0px rgba(120, 53, 15, 0.4)",
             backgroundImage: `
@@ -157,8 +157,8 @@ const Hero = () => {
               <p className='subtitle'>
 
                 <RotatingText
-                  texts={['Ignite Your Idea.', 'Collaborate For Change.', 'Innovate To Impact.', 'Build The Future.']}
-                  mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] text-white overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
+                  texts={['Bid. Pitch. Network.','Ignite Your Idea.', 'Collaborate For Change.', 'Innovate To Impact.', 'Build The Future.']}
+                  mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] shadow-[6px_6px_0px_rgba(120,53,15,0.5)] text-white text-2xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
                   staggerFrom={"last"} initial={{ y: "100%" }} animate={{ y: 0 }}
                   exit={{ y: "-120%" }} staggerDuration={0.025}
                   splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"
