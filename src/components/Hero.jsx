@@ -103,7 +103,7 @@ const Hero = () => {
        <img 
        src="/logo.png" 
        alt="Ideathon Logo" 
-       className="h-80 w-full lg:h-100 lg:pl-10 object-contain"
+       className="h-40 w-full lg:h-60 lg:pl-10 object-contain"
        />
        </header>
 
@@ -138,7 +138,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "backOut", delay: 1 }}
-          className="w-full flex justify-center lg:mb-25 scale-80 md:scale-100 z-50"
+          className="w-full flex justify-center py-4 lg:mb-25 scale-80 md:scale-100 z-50"
         >
           <a href="https://register-link.com" target="_blank" rel="noopener noreferrer">
             <button

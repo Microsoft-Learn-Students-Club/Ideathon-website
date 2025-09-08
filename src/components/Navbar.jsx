@@ -42,7 +42,7 @@ const Navbar = () => {
         <Link to="/" className="flex items-center space-x-3" aria-label="Go to homepage">
           <img
             src="/logo.png"
-            className="h-24"
+            className="h-16 py-2"
             alt="Ideathon Event Logo"
           />
         </Link>
