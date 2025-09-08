@@ -98,10 +98,14 @@ const Hero = () => {
           className="block lg:absolute top-[20vh] mx-auto lg:left-1/6 w-30 lg:w-30 lg:rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
         />
 
-        {/*Event Logo/header*/}
-        <header className='flex flex-col title w-full text-6xl lg:text-[20vh] text-center lg:mt-[10%] mt-[0%] font-extrabold'>
-          NovaTra 1.0
-        </header>
+        {/* Event Logo / Header */}
+       <header className="flex justify-center items-center w-full sm:mt-0 lg:mt-[10%]">
+       <img 
+       src="/logo.png" 
+       alt="Ideathon Logo" 
+       className="h-80 w-full lg:h-100 lg:pl-10 object-contain"
+       />
+       </header>
 
         <br />
         {/* Event Date */}
@@ -134,7 +138,7 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "backOut", delay: 1 }}
-          className="w-full flex justify-center mt-8 scale-80 md:scale-100 z-50"
+          className="w-full flex justify-center lg:mb-25 scale-80 md:scale-100 z-50"
         >
           <a href="https://register-link.com" target="_blank" rel="noopener noreferrer">
             <button
@@ -157,7 +161,7 @@ const Hero = () => {
               <p className='subtitle'>
 
                 <RotatingText
-                  texts={['Bid. Pitch. Network.','Ignite Your Idea.', 'Collaborate For Change.', 'Innovate To Impact.', 'Build The Future.']}
+                  texts={['Bid.','Pitch.', 'Network.']}
                   mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] shadow-[6px_6px_0px_rgba(120,53,15,0.5)] text-white text-2xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
                   staggerFrom={"last"} initial={{ y: "100%" }} animate={{ y: 0 }}
                   exit={{ y: "-120%" }} staggerDuration={0.025}
