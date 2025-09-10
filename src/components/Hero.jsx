@@ -140,7 +140,7 @@ const Hero = () => {
           transition={{ duration: 0.8, ease: "backOut", delay: 1 }}
           className="w-full flex justify-center py-4 lg:mb-25 scale-80 md:scale-100 z-50"
         >
-          <a href="https://register-link.com" target="_blank" rel="noopener noreferrer">
+          <a href="https://unstop.com/competitions/novatra-10-where-ideas-meet-impact-vidyavardhinis-college-of-engineering-and-technology-maharashtra-1554303" target="_blank" rel="noopener noreferrer">
             <button
               className="button bg-[var(--color-maroon)] border-5 border-[var(--color-black)] cursor-pointer
         text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
