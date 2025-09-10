@@ -128,7 +128,7 @@ const Hero = () => {
             style={{ transform: "scaleX(1.2) scaleY(1)" }}
           >
             <span className="my-auto text-7xl relative inline-block">
-              16
+              17
             </span>
             <span className="text-3xl">SEPT</span>
           </div>
