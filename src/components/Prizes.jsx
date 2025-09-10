@@ -17,17 +17,17 @@ const COLORS = {
 const TROPHIES = {
   "Winner": "src/assets/prizes/gold.png",
   "Runner-up": "src/assets/prizes/silver.png",
-  "2nd Runner-up": "src/assets/prizes/bronze.png",
+  "All Participants": "src/assets/prizes/participants.png",
 };
 
 const DEFAULT_AMOUNTS = {
-  "Winner": "₹15,000",
-  "Runner-up": "₹7,500",
-  "2nd Runner-up": "₹4,000",
+  "Winner": "₹4,000",
+  "Runner-up": "₹3,000",
+  "All Participants": "Networking",
 };
 
 function FilterTabs({ value, onChange }) {
-  const options = ["Winner", "Runner-up", "2nd Runner-up"];
+  const options = ["Winner", "Runner-up", "All Participants"];
   return (
     <div
       className="hidden sm:flex flex-wrap items-center gap-2 sm:gap-3"
@@ -65,11 +65,11 @@ function PrizeCard({ rank, imgSrc, highlight, amount, onHover, onLeave }) {
   const bgMap = {
     "Winner": COLORS.maroon,
     "Runner-up": COLORS.coral,
-    "2nd Runner-up": COLORS.blue,
+    "All Participants": COLORS.blue,
   };
 
   const cardBg = bgMap[rank] || COLORS.cream;
-  const isSecond = rank === "2nd Runner-up";
+  const isSecond = rank === "All Participants";
   const isRunner = rank === "Runner-up";
   const isWinner = rank === "Winner";
 
@@ -162,7 +162,7 @@ export default function Prizes({ amounts = {} }) {
   const getAmount = (rank) =>
     amounts && amounts[rank] ? amounts[rank] : DEFAULT_AMOUNTS[rank];
 
-  // 👑 Order changed → Winner → Runner-up → 2nd Runner-up
+  // 👑 Order changed → Winner → Runner-up → All Participants
   const items = [
     { rank: "Winner", imgSrc: TROPHIES["Winner"], amount: getAmount("Winner") },
     {
@@ -171,9 +171,9 @@ export default function Prizes({ amounts = {} }) {
       amount: getAmount("Runner-up"),
     },
     {
-      rank: "2nd Runner-up",
-      imgSrc: TROPHIES["2nd Runner-up"],
-      amount: getAmount("2nd Runner-up"),
+      rank: "All Participants",
+      imgSrc: TROPHIES["All Participants"],
+      amount: getAmount("All Participants"),
     },
   ];
 
