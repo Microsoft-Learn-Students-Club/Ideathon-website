@@ -4,20 +4,29 @@ import { ChevronDown } from "lucide-react";
 
 const faqs = [
   {
-    question: "Question 1",
-    answer: "Answer 1",
+    question: "Who is eligible to participate?",
+    answer: "Any engineering student with an idea and ambition.",
   },
   {
-    question: "Question 2",
-    answer: "Answer 2",
+    question: "Can teams consist of participants from different colleges?",
+    answer: "Yes, inter-college teams are allowed.",
   },
   {
-    question: "Question 3",
-    answer: "Answer 3",
+    question: "What is the allowed team size? Is solo participation allowed?",
+    answer: "Teams must have 2–3 members. Solo participation is not allowed.",
   },
   {
-    question: "Question 4",
-    answer: "Answer 4",
+    question: "What is the fee for shortlisted teams?",
+    answer: "Shortlisted teams must pay a minimal fee of ₹150 per team.",
+  },
+  {
+    question: "Are there any specific hashtags or mentions required for social media reels?",
+    answer:
+      "Yes, teams must tag the official MLSC VCET Instagram account, and all team members should follow the account for updates. Use hashtags: #mlsc #novatra1.0",
+  },
+  {
+    question: "How will teams be evaluated for selection?",
+    answer: "Teams with unique ideas and novelty will be given selection preference.",
   },
 ];
 
@@ -30,7 +39,6 @@ export default function FAQSection() {
 
   return (
     <div className="max-w mx-auto py-16 px-10 pb-30 bg-yellow-50 md:px-50">
-
       <h2 className="flex mx-auto items-center text-3xl font-bold text-[var(--color-yellow)] uppercase mb-12 w-full max-w-3xl">
         <span className="flex-grow h-[2px] bg-gray-700"></span>
         <span className="px-6">FAQ's</span>
@@ -63,7 +71,7 @@ export default function FAQSection() {
                   transition={{ duration: 0.35, ease: "easeInOut" }}
                   className="overflow-hidden"
                 >
-                  <p className="px-6 pb-4 text-gray-100 font-bold leading-relaxed">
+                  <p className="px-6 pb-4 text-[var(--color-cream)] font-bold leading-relaxed">
                     {faq.answer}
                   </p>
                 </motion.div>

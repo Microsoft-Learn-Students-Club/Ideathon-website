@@ -7,6 +7,7 @@ import GeneralGuidelines from '../components/GeneralGuidelines';
 import About from '../components/About';
 import Contact from '../components/Contact';
 import Hero from '../components/Hero';
+import Roles from '../components/Roles';
 
 const Home = () => {
     return (
@@ -36,8 +37,11 @@ const Home = () => {
             <div id="timeline">
                 <Timeline />
             </div>
-            <div id="domains">
+            {/* <div id="domains">
                 <Domains />
+            </div> */}
+            <div id="roles">
+                <Roles />
             </div>
             <div id="prizes">
                 <Prizes />

@@ -95,16 +95,20 @@ const Hero = () => {
           viewport={{ once: true }}
           src={mlsclogo}
           alt="logo"
-          className="block lg:absolute top-[20vh] mx-auto lg:left-1/6 w-30 lg:w-30 lg:rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
+          className="block lg:absolute top-[35vh] mx-auto lg:left-1/6 w-30 lg:w-45 lg:-rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
         />
 
         {/* Event Logo / Header */}
        <header className="flex justify-center items-center w-full sm:mt-0 lg:mt-[10%]">
-       <img 
-       src="/logo.png" 
-       alt="Ideathon Logo" 
-       className="h-40 w-full lg:h-60 lg:pl-10 object-contain"
-       />
+        <motion.img
+          initial={{ opacity: 0, x: 40 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          viewport={{ once: true }}        
+          src="/logo-cropped.svg" 
+        alt="Novatra Logo" 
+        className="h-40 w-full lg:h-70 lg:pl-10 object-contain"
+        />
        </header>
 
         <br />
@@ -142,9 +146,9 @@ const Hero = () => {
         >
           <a href="https://register-link.com" target="_blank" rel="noopener noreferrer">
             <button
-              className="button bg-[var(--color-maroon)] border-5 border-[var(--color-black)] cursor-pointer
-        text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
-        hover:bg-amber-700 transition text-3xl uppercase
+              className="button bg-[var(--color-yellow)] border-5 border-[var(--color-black)] cursor-pointer
+        text-[var(--color-black)] px-8 py-4 rounded-full font-bold 
+        hover:bg-amber-200 transition text-3xl uppercase
         shadow-[6px_6px_0px_rgba(120,53,15,0.5)]"
             >
               Register Now!
@@ -162,7 +166,7 @@ const Hero = () => {
 
                 <RotatingText
                   texts={['Bid.','Pitch.', 'Network.']}
-                  mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] shadow-[6px_6px_0px_rgba(120,53,15,0.5)] text-white text-2xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
+                  mainClassName="text-4xl font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] shadow-[6px_6px_0px_rgba(120,53,15,0.5)] text-white text-2xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
                   staggerFrom={"last"} initial={{ y: "100%" }} animate={{ y: 0 }}
                   exit={{ y: "-120%" }} staggerDuration={0.025}
                   splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"

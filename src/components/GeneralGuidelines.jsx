@@ -21,7 +21,7 @@ export default function GeneralGuidelines() {
       }}
       className="min-h-screen flex flex-col gap-10 items-center justify-center px-4 py-10 font-sans"
     >
-         <h2 className="flex mx-auto items-center text-3xl font-bold text-yellow uppercase mb-12 w-full max-w-3xl">
+      <h2 className="flex mx-auto items-center text-3xl font-bold text-yellow uppercase mb-12 w-full max-w-3xl">
         <span className="flex-grow h-[2px] bg-gray-700"></span>
         <span className="px-6">General Guidelines</span>
         <span className="flex-grow h-[2px] bg-gray-700"></span>
@@ -35,7 +35,6 @@ export default function GeneralGuidelines() {
           <h2 className="relative text-xl text-center md:text-2xl font-extrabold text-amber-950 z-10">
             Rules To Follow
           </h2>
-          {/* Tape effect */}
           <div className="absolute inset-0 -rotate-2 border-4 border-[var(--color-orange)] rounded-md shadow-[3px_3px_0px_var(--color-black)] -z-10"></div>
         </div>
 
