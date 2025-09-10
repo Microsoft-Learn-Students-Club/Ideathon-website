@@ -37,17 +37,14 @@ const Navbar = () => {
 
   return (
     <nav className="fixed w-full top-0 z-50 bg-yellow-50 shadow-md">
-      <div className="flex items-center justify-between px-6 py-3">
+      <div className="flex items-center justify-between px-5">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3" aria-label="Go to homepage">
           <img
-            src="https://tse4.mm.bing.net/th/id/OIP.uoC7cZscAU3fwDsrxAC3UgHaHa?pid=Api&P=0&h=180"
-            className="h-8 rounded-lg"
+            src="/logo.png"
+            className="h-16 py-2"
             alt="Ideathon Event Logo"
           />
-          <span className="self-center text-2xl font-semibold font-serif whitespace-nowrap text-black">
-            Ideathon
-          </span>
         </Link>
 
         {/* Desktop Nav */}

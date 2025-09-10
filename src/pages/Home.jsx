@@ -11,7 +11,7 @@ import Hero from '../components/Hero';
 const Home = () => {
     return (
         <>
-            <div id="home" className="min-h-screen flex items-center justify-center bg-yellow-50 dark:bg-gray-900">
+            <div id="home" className="min-h-screen flex items-center justify-center bg-yellow-50">
                 <Hero />
             </div>
             {/* Simple wavy line */}

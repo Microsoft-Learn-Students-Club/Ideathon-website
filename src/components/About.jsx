@@ -8,7 +8,7 @@ import ideathonLogo from "../assets/about/ideathon.png";
 
 const About = () => {
     return (
-        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 dark:bg-gray-800 p-8">
+        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 p-8">
             <section className='relative flex flex-col-reverse lg:flex-row items-center bg-[var(--color-orange)] border-4 border-[var(--color-black)] rounded-3xl rounded-tl-none w-full md:w-3/4 min-h-[60vh] p-8'>
 
                 {/* Section Header */}
