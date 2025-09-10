@@ -60,7 +60,7 @@ const About = () => {
                     <h2 className="text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
                         About <span className="text-[var(--color-red)]">MLSC Ideathon</span>
                     </h2>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm md:text-lg">
+                    <p className="text-gray-700 text-sm md:text-lg">
                         MLSC Ideathon isn't just another event – it's where caffeine, creativity, and code collide. We bring together curious minds across tech, design, and business to solve real-world problems fast. Expect messy whiteboards, midnight breakthroughs, and the thrill of turning an idea into something tangible. Whether you're here to win, learn, or just vibe with other innovators, this is your stage to build what matters.
                     </p>
                 </div>

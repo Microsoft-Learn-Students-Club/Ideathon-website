@@ -99,7 +99,7 @@ const Hero = () => {
         />
 
         {/*Event Logo/header*/}
-        <header className='flex flex-col title w-full text-6xl lg:text-[20vh] text-center lg:mt-[10%] mt-[0%] font-extrabold'>Ideathon <span>2025</span></header>
+        <header className='flex flex-col title w-full text-6xl lg:text-[20vh] text-center lg:mt-[10%] mt-[0%] font-extrabold text-amber-900'>Ideathon <span>2025</span></header>
 
         <br />
         {/* Event Date */}
