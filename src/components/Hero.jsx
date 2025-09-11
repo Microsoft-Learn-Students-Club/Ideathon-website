@@ -11,6 +11,7 @@ import Tape2 from "../assets/tape2.png";
 import mlsclogo from "../assets/about/mlsclogo.png"
 import { useEffect, useRef } from "react";
 import { annotate } from "rough-notation";
+import novatra from "../assets/novatra.png";
 
 const Hero = () => {
   const dateRef = useRef(null);
@@ -63,7 +64,16 @@ const Hero = () => {
 
   return (
     <>
-      <section id="hero" className="min-h-screen flex flex-col overflow-x-hidden">
+      <section id="hero" className="min-h-screen flex flex-col overflow-x-hidden"
+        style={{
+          backgroundImage: `
+      radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 1px),
+      radial-gradient(circle, rgba(0,0,0,0.25) 1px, transparent 1px)
+    `,
+          backgroundSize: "30px 30px",
+          backgroundPosition: "0 0, 15px 15px",
+        }}
+      >
 
         {/* Blobs */}
         <div className='w-100 h-100 -z-10 absolute rounded-full bg-yellow-100 scale-150'
@@ -78,7 +88,7 @@ const Hero = () => {
         </div>
 
         {/* Blobs */}
-        <div className="hidden lg:block absolute w-[200px] h-[400px] -z-10 rounded-l-full right-12 top-[20%] bg-yellow-100 scale-150"
+        <div className="hidden lg:block absolute w-[250px] h-[500px] -z-10 rounded-l-full right-12 top-[20%] bg-yellow-100 scale-150"
           style={{
             backgroundImage: `
             linear-gradient(to right, rgba(0,0,0,0.08) 1px, transparent 1px),
@@ -95,22 +105,27 @@ const Hero = () => {
           viewport={{ once: true }}
           src={mlsclogo}
           alt="logo"
-          className="block lg:absolute top-[20vh] mx-auto lg:left-1/6 w-30 lg:w-30 lg:rotate-[6deg] mt-[20%] lg:mt-[0%] mb-5"
+          className="block lg:absolute top-[30vh] mx-auto lg:left-1/6 w-24 lg:w-[10vw] lg:-rotate-[6deg] mt-[20%] lg:mt-[0%] -mb-5 lg:mb-5"
         />
 
         {/* Event Logo / Header */}
-       <header className="flex justify-center items-center w-full sm:mt-0 lg:mt-[10%]">
-       <img 
-       src="/logo.png" 
-       alt="Ideathon Logo" 
-       className="h-40 w-full lg:h-60 lg:pl-10 object-contain"
-       />
-       </header>
+        <header className="flex justify-center items-center w-full sm:mt-0 lg:mt-[10%]">
+          <motion.img
+            initial={{ opacity: 0, x: 40 }}
+            whileInView={{ opacity: 1, x: 0 }}
+            transition={{ duration: 0.6, delay: 0.2 }}
+            viewport={{ once: true }}
+            src="/logo-cropped.svg"
+            // src={novatra}
+            alt="Novatra Logo"
+            className="h-40 w-full lg:h-[30vh] lg:pl-10 object-contain m-0"
+          />
+        </header>
 
         <br />
         {/* Event Date */}
         <div
-          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-6/8 -rotate-3 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-50 w-50 align-middle text-center"
+          className="block mx-auto scale-90 lg:scale-100 lg:absolute top-[40%] md:left-20 lg:left-6/8 -rotate-3 font-extrabold bg-[var(--color-cream)] rounded-2xl border-3 border-[var(--color-maroon)] h-40 w-40 lg:h-50 lg:w-50 align-middle text-center"
           style={{
             boxShadow: "-8px 8px 0px rgba(120, 53, 15, 0.4)",
             backgroundImage: `
@@ -127,10 +142,10 @@ const Hero = () => {
           <div ref={dateRef} className="flex flex-col my-3"
             style={{ transform: "scaleX(1.2) scaleY(1)" }}
           >
-            <span className="my-auto text-7xl relative inline-block">
+            <span className="my-auto text-6xl lg:text-7xl relative inline-block">
               17
             </span>
-            <span className="text-3xl">SEPT</span>
+            <span className="text-2xl lg:text-3xl">SEPT</span>
           </div>
         </div>
 
@@ -143,9 +158,9 @@ const Hero = () => {
           <a href="https://unstop.com/competitions/novatra-10-where-ideas-meet-impact-vidyavardhinis-college-of-engineering-and-technology-maharashtra-1554303" target="_blank" rel="noopener noreferrer">
             <button
               className="button bg-[var(--color-maroon)] border-5 border-[var(--color-black)] cursor-pointer
-        text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
-        hover:bg-amber-700 transition text-3xl uppercase
-        shadow-[6px_6px_0px_rgba(120,53,15,0.5)]"
+                text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
+                hover:bg-amber-700 text-3xl uppercase
+                  shadow-[6px_6px_0px_rgba(120,53,15,0.5)] hover:scale-105 transition-all ease-in-out lg:mt-10"
             >
               Register Now!
             </button>
@@ -153,7 +168,7 @@ const Hero = () => {
         </motion.div>
 
 
-        <div className="body">
+        <div className="body scale-70 lg:scale-80">
           <div className="content ">
 
             <div className="space-y-5 block">
@@ -161,8 +176,8 @@ const Hero = () => {
               <p className='subtitle'>
 
                 <RotatingText
-                  texts={['Bid.','Pitch.', 'Network.']}
-                  mainClassName="font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] shadow-[6px_6px_0px_rgba(120,53,15,0.5)] text-white text-2xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
+                  texts={['Bid.', 'Pitch.', 'Network.']}
+                  mainClassName=" min-w-100 w-full text-4xl font-bold px-2 sm:px-2 md:px-3 bg-[var(--color-teal)] shadow-[6px_6px_0px_rgba(120,53,15,0.5)] text-white text-2xl overflow-hidden py-0.5 sm:py-1 md:py-2 justify-center rounded-full border-3 border-black"
                   staggerFrom={"last"} initial={{ y: "100%" }} animate={{ y: 0 }}
                   exit={{ y: "-120%" }} staggerDuration={0.025}
                   splitLevelClassName="overflow-hidden pb-0.5 sm:pb-1 md:pb-1"

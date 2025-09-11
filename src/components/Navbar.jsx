@@ -36,33 +36,32 @@ const Navbar = () => {
   }, [location]);
 
   return (
-    <nav className="fixed w-full top-0 z-50 bg-yellow-50 shadow-md">
+    <nav className="fixed w-full top-0 z-50 bg-[var(--color-black)] shadow-md">
       <div className="flex items-center justify-between px-5">
         {/* Logo */}
         <Link to="/" className="flex items-center space-x-3" aria-label="Go to homepage">
           <img
             src="/logo.png"
-            className="h-16 py-2"
+            className="h-14 md:h-18 lg:h-20 py-2"
             alt="Ideathon Event Logo"
           />
         </Link>
 
         {/* Desktop Nav */}
-        <div className="hidden md:flex items-center space-x-6">
+        <div className="hidden md:flex items-center space-x-2">
           {NAV_LINKS.map(({ id, label, type, rotation, hoverStyles }) =>
             type === "scroll" ? (
               <button
                 key={id}
                 onClick={() => handleScroll(id)}
-                className={`transform hover:rotate-[${rotation}deg] font-bold cursor-pointer font-serif px-4 py-2 rounded-md transition duration-300`}
-                style={{ backgroundColor: "transparent", color: "#111" }}
+                className={`transform hover:rotate-[${rotation}deg] font-bold cursor-pointer font-serif px-8 py-3 rounded-full transition duration-300`}
+                style={{ backgroundColor: "transparent", color: "#fff" }}
                 onMouseEnter={(e) => {
                   e.target.style.backgroundColor = hoverStyles.bgColor;
                   e.target.style.color = hoverStyles.textColor;
                 }}
                 onMouseLeave={(e) => {
                   e.target.style.backgroundColor = "transparent";
-                  e.target.style.color = "#111";
                 }}
               >
                 {label}
@@ -91,7 +90,7 @@ const Navbar = () => {
         {/* Mobile Hamburger */}
         <div className="md:hidden">
           <button onClick={() => setIsMenuOpen(!isMenuOpen)} aria-label="Toggle menu">
-            {isMenuOpen ? <X size={28} className="text-black cursor-pointer" /> : <Menu size={28} className="text-black cursor-pointer" />}
+            {isMenuOpen ? <X size={28} className="text-white cursor-pointer" /> : <Menu size={28} className="text-white cursor-pointer" />}
           </button>
         </div>
       </div>

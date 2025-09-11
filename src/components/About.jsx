@@ -4,21 +4,21 @@ import pin from "../assets/about/pin.png";
 import redclip from "../assets/about/redclip.png";
 import blueclip from "../assets/about/blueclip.png";
 import mlsclogo from "../assets/about/mlsclogo.png";
-import ideathonLogo from "../assets/about/ideathon.png";
+import novatra from "../assets/novatra.png";
 
 const About = () => {
     return (
-        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 p-8">
-            <section className='relative flex flex-col-reverse lg:flex-row items-center bg-[var(--color-orange)] border-4 border-[var(--color-black)] rounded-3xl rounded-tl-none w-full md:w-3/4 min-h-[60vh] p-8'>
+        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 p-2 py-8 lg:p-8">
+            <section className='relative flex flex-col-reverse lg:flex-row items-center bg-[var(--color-orange)] border-4 border-[var(--color-black)] rounded-3xl rounded-tl-none w-full md:w-3/4 min-h-[70vh] p-2 lg:p-8'>
 
                 {/* Section Header */}
                 <div className='absolute -top-10 md:-top-14 -left-1 bg-[var(--color-orange)] border-4 border-[var(--color-black)] w-34 h-10 md:h-14 border-b-0 rounded-t-2xl px-7 md:px-5 py-3'>
                     <p className='text-[var(--color-cream)] font-bold text-xl md:text-2xl'>ABOUT</p>
                 </div>
 
-                {/* pin */}
+                {/* Pin */}
                 <motion.img
-                    src={[pin]}
+                    src={pin}
                     alt="clip"
                     key="pin"
                     initial={{ opacity: 0, x: -50, rotate: 0 }}
@@ -37,7 +37,7 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0, rotate: 6 }}
                     transition={{ duration: 0.7, type: 'spring', stiffness: 120 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="absolute -top-14 md:-top-20 right-4 sm:left-1/2 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
+                    className="z-10 absolute -top-14 md:-top-20 right-4 sm:left-1/2 transform -translate-x-1/2 w-20 sm:w-28 mb-3 hover:rotate-3 transition-transform duration-300"
                 />
 
                 <div
@@ -55,29 +55,55 @@ const About = () => {
                     }}
                 ></div>
 
-                {/* Content Card */}
-                <div className="z-10 lg:relative left-10 sm:-rotate-2 bg-[var(--color-cream)] text-center lg:w-2/3 p-6 rounded-xl border-3 border-[var(--color-black)] border-dashed shadow-xl">
-                    <h2 className="text-2xl md:text-4xl font-bold text-gray-800 dark:text-white mb-4">
-                        About <span className="text-[var(--color-red)]">MLSC Ideathon</span>
-                    </h2>
-                    <p className="text-gray-700 dark:text-gray-300 text-sm md:text-lg">
-                        MLSC Ideathon isn't just another event – it's where caffeine, creativity, and code collide. We bring together curious minds across tech, design, and business to solve real-world problems fast. Expect messy whiteboards, midnight breakthroughs, and the thrill of turning an idea into something tangible. Whether you're here to win, learn, or just vibe with other innovators, this is your stage to build what matters.
-                    </p>
+                {/* Content Card with two notes */}
+                <div className="z-5 lg:relative left-10 sm:-rotate-2 bg-[var(--color-cream)] text-center lg:w-2/3 p-6 rounded-xl border-3 border-[var(--color-black)] border-dashed shadow-xl">
+
+                    {/* Who Are We */}
+                    <div className="mb-8">
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                            Who Are <span className="text-[var(--color-red)]">We?</span>
+                        </h2>
+                        <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
+                            MLSC VCET is a technical club that fosters coding culture at Vidyavardhini’s College of Engineering and Technology.
+                            We mentor students to sharpen their problem-solving, coding, and logical reasoning skills.
+                        </p>
+                        <p className="hidden lg:block text-gray-700 text-sm md:text-lg mt-4 leading-relaxed">
+                            Through peer learning and collaboration, we spread technical knowledge, build open-source projects, and host events
+                            that drive innovation.
+                        </p>
+                    </div>
+
+
+                    {/* About NovaTra */}
+                    <div>
+                        <h2 className="text-2xl md:text-3xl font-bold text-gray-800 mb-3">
+                            About <span className="text-[var(--color-red)]">NovaTra 1.0</span>
+                        </h2>
+                        <p className="text-gray-700 text-sm md:text-lg leading-relaxed">
+                            NovaTra 1.0 is a business presentation competition aimed at inspiring creativity,
+                            innovation, and entrepreneurial spirit among engineering students. Through engaging
+                            rounds of bidding, pitching, and networking, participants present their product ideas
+                            and problem-solving skills to peers, mentors, and judges.
+                        </p>
+                        <p className="text-gray-700 text-sm md:text-lg mt-4 leading-relaxed">
+                            <strong>Purpose:</strong> To empower students to transform raw ideas into impactful
+                            solutions, enhance their presentation abilities, and foster meaningful connections.
+                        </p>
+                    </div>
                 </div>
 
-
-                {/* Ideathon Logo */}
+                {/* Event Logo */}
                 <img
-                    src={ideathonLogo}
-                    alt="ideathon"
-                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-6 w-40 lg:w-56 mb-3"
+                    src={novatra}
+                    alt="NovaTra"
+                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-2 w-50 lg:w-60 mb-3"
                 />
 
                 {/* MLSC Logo */}
                 <img
                     src={mlsclogo}
                     alt="MLSC"
-                    className="mr-auto md:mr-0 block lg:absolute right-5 top-4 rotate-6 w-32 sm:w-48 mb-3"
+                    className="mr-auto md:mr-0 block lg:absolute right-5 top-4 rotate-6 w-25 lg:w-44 sm:w-48 lg:mb-3"
                 />
 
                 {/* Red Clip */}
@@ -89,9 +115,8 @@ const About = () => {
                     whileInView={{ opacity: 1, y: 0, rotate: 190 }}
                     transition={{ duration: 0.5, type: 'spring', stiffness: 120 }}
                     viewport={{ once: true, amount: 0.3 }}
-                    className="absolute -bottom-16 md:-bottom-20 sm:right-20 w-20 sm:w-28 mb-3 -rotate-15 hover:-rotate-10 transition-transform duration-300"
+                    className="z-10 absolute -bottom-16 md:-bottom-20 sm:right-20 w-20 sm:w-28 mb-3 -rotate-15 hover:-rotate-10 transition-transform duration-300"
                 />
-
             </section>
         </div>
     );
