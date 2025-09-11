@@ -12,7 +12,7 @@ export default function Chatbot() {
   useEffect(() => {
     setMessages([
       {
-        text: "👋 Hello! I'm your Hackathon assistant. How can I help you today?",
+        text: "👋 Hello! I'm your Ideathon assistant. How can I help you today?",
         sender: "bot",
       },
     ]);
@@ -71,14 +71,17 @@ export default function Chatbot() {
           const button = document.querySelector(".chat-button");
           if (button) button.style.display = "none";
         }}
-        className="fixed z-20 flex justify-center items-center bottom-6 right-6 chat-button border-4 border-black bg-yellow-300 text-black shadow-[6px_6px_0px_#000] hover:translate-x-1 hover:translate-y-1 transition-all"
+        className="fixed z-20 flex justify-center items-center bottom-6 right-6 chat-button 
+                   border-4 border-[#001219] bg-[#ee9b00] text-[#001219] 
+                   shadow-[6px_6px_0px_#001219] hover:translate-x-1 hover:translate-y-1 transition-all"
       >
         <Bot className="w-8 h-8" />
       </Button>
 
       {isOpen && (
         <div className="z-50 fixed inset-y-0 right-0 flex items-center p-4 w-full lg:w-1/3 transition-all duration-300 ease-in-out">
-          <div className="relative w-full h-full md:h-auto bg-white border-4 border-black shadow-[8px_8px_0px_#000] rounded-xl p-4 flex flex-col">
+          <div className="relative w-full h-full md:h-auto bg-[#efefef] border-4 border-[#001219] 
+                          shadow-[8px_8px_0px_#001219] rounded-xl p-4 flex flex-col">
             
             {/* Close Button */}
             <Button
@@ -87,26 +90,30 @@ export default function Chatbot() {
                 const button = document.querySelector(".chat-button");
                 if (button) button.style.display = "flex";
               }}
-              className="absolute -top-4 -right-4 bg-red-400 border-4 border-black rounded-full shadow-[4px_4px_0px_#000] hover:bg-red-500"
+              className="absolute -top-4 -right-4 bg-[#ae2012] border-4 border-[#001219] 
+                         rounded-full shadow-[4px_4px_0px_#001219] hover:bg-[#9b2226] text-[#efefef]"
             >
               <X />
             </Button>
 
             {/* Header */}
-            <h2 className="text-xl font-extrabold mb-3 text-center border-b-4 border-black pb-2 flex items-center justify-center gap-2">
-              <Bot className="w-6 h-6" /> MLSC Hackathon Assistant
+            <h2 className="text-xl font-extrabold mb-3 text-center border-b-4 border-[#001219] 
+                           pb-2 flex items-center justify-center gap-2 text-[#005f73]">
+              <Bot className="w-6 h-6" /> NovaTra 1.0 Assistant 
             </h2>
 
             {/* Messages */}
-            <Card className="flex-1 overflow-y-auto p-3 bg-pink-100 border-4 border-black shadow-[6px_6px_0px_#000] rounded-xl">
+            <Card className="flex-1 overflow-y-auto p-3 bg-[#94d2bd] border-4 border-[#001219] 
+                             shadow-[6px_6px_0px_#001219] rounded-xl">
               <CardContent>
                 {messages.map((msg, index) => (
                   <div
                     key={index}
-                    className={`p-3 my-2 rounded-lg border-4 border-black shadow-[4px_4px_0px_#000] max-w-xs md:max-w-sm text-sm md:text-base flex gap-2 ${
+                    className={`p-3 my-2 rounded-lg border-4 border-[#001219] shadow-[4px_4px_0px_#001219] 
+                                max-w-xs md:max-w-sm text-sm md:text-base flex gap-2 ${
                       msg.sender === "user"
-                        ? "bg-green-300 ml-auto text-black"
-                        : "bg-yellow-200 text-black"
+                        ? "bg-[#ca6702] ml-auto text-[#efefef]"
+                        : "bg-[#e9d8a6] text-[#001219]"
                     }`}
                   >
                     {msg.sender === "bot" ? (
@@ -120,7 +127,8 @@ export default function Chatbot() {
                   </div>
                 ))}
                 {isLoading && (
-                  <div className="p-3 my-2 rounded-lg border-4 border-black shadow-[4px_4px_0px_#000] bg-yellow-200 text-black flex gap-2">
+                  <div className="p-3 my-2 rounded-lg border-4 border-[#001219] shadow-[4px_4px_0px_#001219] 
+                                  bg-[#e9d8a6] text-[#001219] flex gap-2">
                     <Bot className="w-5 h-5 mt-1 shrink-0" />
                     <span className="animate-pulse">Typing...</span>
                   </div>
@@ -136,11 +144,13 @@ export default function Chatbot() {
                 onChange={(e) => setInput(e.target.value)}
                 onKeyPress={(e) => e.key === "Enter" && handleSend()}
                 placeholder="Ask me anything..."
-                className="flex-1 border-4 border-black rounded-lg px-3 py-2 bg-blue-100 text-black shadow-[4px_4px_0px_#000] focus:outline-none"
+                className="flex-1 border-4 border-[#001219] rounded-lg px-3 py-2 bg-[#0a9396] 
+                           text-[#efefef] shadow-[4px_4px_0px_#001219] placeholder-[#efefef]/70 focus:outline-none"
               />
               <Button
                 onClick={handleSend}
-                className="bg-blue-400 border-4 border-black px-4 rounded-lg shadow-[4px_4px_0px_#000] hover:bg-blue-500"
+                className="bg-[#005f73] border-4 border-[#001219] px-4 rounded-lg 
+                           shadow-[4px_4px_0px_#001219] hover:bg-[#0a9396] text-[#efefef]"
               >
                 <Send className="w-5 h-5" />
               </Button>
@@ -152,7 +162,7 @@ export default function Chatbot() {
   );
 }
 
-/* ---------------- UI Components (Neubrutalism Style) ---------------- */
+/* ---------------- UI Components (Neubrutalism + Custom Palette) ---------------- */
 
 export function Button({ children, className, ...props }) {
   return (
