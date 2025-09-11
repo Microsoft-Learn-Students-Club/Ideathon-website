@@ -124,7 +124,7 @@ const Timeline = () => {
             <div className="flex flex-col lg:flex-row justify-between">
 
             {/* Pill for date/deadline */}
-            <div className="inline-block bg-[var(--color-black)] text-white font-semibold text-sm md:text-base px-4 py-1 mt-4 rounded-full shadow-md border border-black">
+            <div className="block bg-[var(--color-black)] text-white font-semibold text-sm md:text-base px-4 py-2 mt-4 rounded-full shadow-md border border-black">
               {stage.extra}
             </div>
 
