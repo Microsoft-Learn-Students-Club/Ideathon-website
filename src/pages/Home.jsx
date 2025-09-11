@@ -20,13 +20,13 @@ const Home = () => {
                 <svg
                     xmlns="http://www.w3.org/2000/svg"
                     viewBox="0 0 500 50"
-                    className="w-full h-12 pb-3"
+                    className="w-full h-12 pb-5"
                     preserveAspectRatio="none"
                 >
                     <path
                         d="M0 25 Q 25 0, 50 25 T 100 25 T 150 25 T 200 25 T 250 25 T 300 25 T 350 25 T 400 25 T 450 25 T 500 25"
                         stroke="black"
-                        strokeWidth="3"
+                        strokeWidth="7"
                         fill="transparent"
                     />
                 </svg>

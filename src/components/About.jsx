@@ -4,11 +4,12 @@ import pin from "../assets/about/pin.png";
 import redclip from "../assets/about/redclip.png";
 import blueclip from "../assets/about/blueclip.png";
 import mlsclogo from "../assets/about/mlsclogo.png";
+import novatra from "../assets/novatra.png";
 
 const About = () => {
     return (
-        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 p-8">
-            <section className='relative flex flex-col-reverse lg:flex-row items-center bg-[var(--color-orange)] border-4 border-[var(--color-black)] rounded-3xl rounded-tl-none w-full md:w-3/4 min-h-[70vh] p-2 g:p-8'>
+        <div id="about" className="min-h-screen flex items-center justify-center bg-yellow-50 p-2 py-8 lg:p-8">
+            <section className='relative flex flex-col-reverse lg:flex-row items-center bg-[var(--color-orange)] border-4 border-[var(--color-black)] rounded-3xl rounded-tl-none w-full md:w-3/4 min-h-[70vh] p-2 lg:p-8'>
 
                 {/* Section Header */}
                 <div className='absolute -top-10 md:-top-14 -left-1 bg-[var(--color-orange)] border-4 border-[var(--color-black)] w-34 h-10 md:h-14 border-b-0 rounded-t-2xl px-7 md:px-5 py-3'>
@@ -66,7 +67,7 @@ const About = () => {
                             MLSC VCET is a technical club that fosters coding culture at Vidyavardhini’s College of Engineering and Technology.
                             We mentor students to sharpen their problem-solving, coding, and logical reasoning skills.
                         </p>
-                        <p className="text-gray-700 text-sm md:text-lg mt-4 leading-relaxed">
+                        <p className="hidden lg:block text-gray-700 text-sm md:text-lg mt-4 leading-relaxed">
                             Through peer learning and collaboration, we spread technical knowledge, build open-source projects, and host events
                             that drive innovation.
                         </p>
@@ -93,9 +94,9 @@ const About = () => {
 
                 {/* Event Logo */}
                 <img
-                    src='/logo-cropped.svg'
+                    src={novatra}
                     alt="NovaTra"
-                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-2 w-80 lg:w-60 mb-3"
+                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-2 w-50 lg:w-60 mb-3"
                 />
 
                 {/* MLSC Logo */}

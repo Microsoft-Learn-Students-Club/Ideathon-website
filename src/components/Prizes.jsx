@@ -77,7 +77,7 @@ function PrizeCard({ rank, imgSrc, highlight, amount, onHover, onLeave }) {
     <div
       onMouseEnter={() => onHover(rank)}
       onMouseLeave={onLeave}
-      className="relative rounded-xl border-[4px] p-6 md:p-7 lg:p-8 flex flex-col items-center text-center justify-between cursor-pointer transition-all duration-300"
+      className="lg:w-[500px] relative rounded-xl border-[4px] p-6 md:p-7 lg:p-8 flex flex-col items-center text-center justify-between cursor-pointer transition-all duration-300"
       style={{
         backgroundColor: cardBg,
         borderColor: COLORS.black,
@@ -208,7 +208,7 @@ export default function Prizes({ amounts = {} }) {
           </div>
         </header>
 
-        <div className="flex justify-center gap-6 flex-wrap">
+        <div className="flex justify-center gap-10 flex-wrap">
           {items.map((item) => (
             <div
               key={item.rank}
