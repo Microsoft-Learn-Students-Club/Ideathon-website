@@ -95,7 +95,7 @@ const About = () => {
                 <img
                     src='/logo-cropped.svg'
                     alt="NovaTra"
-                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-2 w-80 lg:w-80 mb-3"
+                    className="block lg:absolute right-5 lg:right-14 top-56 -rotate-2 w-80 lg:w-60 mb-3"
                 />
 
                 {/* MLSC Logo */}

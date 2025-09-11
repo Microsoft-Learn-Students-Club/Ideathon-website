@@ -58,7 +58,7 @@ export default function Contact() {
             <li>
               <a
                 href="mailto:parth.232473101@vcet.edu.in"
-                className="underline text-pastel-pink font-bold"
+                className="underline text-[var(--color-maroon)] font-semibold text-sm lg:text-auto"
               >
                 parth.232473101@vcet.edu.in
               </a>
@@ -66,7 +66,7 @@ export default function Contact() {
             <li>
               <a
                 href="mailto:sharvari.232813201@vcet.edu.in"
-                className="underline text-pastel-pink font-bold"
+                className="underline text-[var(--color-maroon)] font-semibold text-sm lg:text-auto"
               >
                 sharvari.232813201@vcet.edu.in
               </a>
@@ -74,7 +74,7 @@ export default function Contact() {
             <li>
               <a
                 href="mailto:gayatri.235396208@vcet.edu.in"
-                className="underline text-pastel-pink font-bold"
+                className="underline text-[var(--color-maroon)] font-semibold text-sm lg:text-auto"
               >
                 gayatri.235396208@vcet.edu.in
               </a>
