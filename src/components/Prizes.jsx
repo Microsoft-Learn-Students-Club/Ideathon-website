@@ -1,5 +1,8 @@
 import { useState } from "react";
 import bookmark from "../assets/prizes/bookmark.png";
+import goldTrophy from "../assets/prizes/gold.png";
+import silverTrophy from "../assets/prizes/silver.png";
+import participants from "../assets/prizes/participants.png";
 
 const COLORS = {
   blue: "var(--color-teal)", // primary
@@ -15,9 +18,9 @@ const COLORS = {
 };
 
 const TROPHIES = {
-  "Winner": "src/assets/prizes/gold.png",
-  "Runner-up": "src/assets/prizes/silver.png",
-  "All Participants": "src/assets/prizes/participants.png",
+  "Winner": goldTrophy,
+  "Runner-up": silverTrophy,
+  "All Participants": participants,
 };
 
 const DEFAULT_AMOUNTS = {
@@ -128,7 +131,7 @@ function PrizeCard({ rank, imgSrc, highlight, amount, onHover, onLeave }) {
 
       <img
         src={imgSrc || "/placeholder.svg"}
-        alt={`${rank} trophy`}
+        alt={`${rank}`}
         width={140}
         height={140}
         className="mt-6 mx-auto block h-auto w-28 sm:w-36"
