@@ -12,6 +12,7 @@ import mlsclogo from "../assets/about/mlsclogo.png"
 import { useEffect, useRef } from "react";
 import { annotate } from "rough-notation";
 import novatra from "../assets/novatra.png";
+import { Instagram, Linkedin, ArrowRight } from "lucide-react";
 
 const Hero = () => {
   const dateRef = useRef(null);
@@ -153,19 +154,46 @@ const Hero = () => {
           initial={{ opacity: 0, scale: 0.8 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 0.8, ease: "backOut", delay: 1 }}
-          className="w-full flex justify-center py-4 lg:mb-25 scale-80 md:scale-100 z-50"
+          className="w-full flex flex-col items-center gap-4 py-4 lg:mb-25 scale-80 md:scale-100 z-50"
         >
-          <a href="https://unstop.com/competitions/novatra-10-where-ideas-meet-impact-vidyavardhinis-college-of-engineering-and-technology-maharashtra-1554303" target="_blank" rel="noopener noreferrer">
+          {/* Register Button */}
+          <a
+            href="https://unstop.com/competitions/novatra-10-where-ideas-meet-impact-vidyavardhinis-college-of-engineering-and-technology-maharashtra-1554303"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
             <button
               className="button bg-[var(--color-maroon)] border-5 border-[var(--color-black)] cursor-pointer
-                text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
-                hover:bg-amber-700 text-3xl uppercase
-                  shadow-[6px_6px_0px_rgba(120,53,15,0.5)] hover:scale-105 transition-all ease-in-out lg:mt-10"
+      text-[var(--color-cream)] px-8 py-4 rounded-full font-bold 
+      hover:bg-amber-700 text-3xl uppercase flex items-center gap-3
+      shadow-[6px_6px_0px_rgba(120,53,15,0.5)] hover:scale-105 transition-all ease-in-out lg:mt-10"
             >
               Register Now!
+              <ArrowRight className="w-7 h-7" />
             </button>
           </a>
+
+          {/* Social Links under button */}
+          <div className="flex gap-6 mt-2">
+            <a
+              href="https://www.instagram.com/mlsc_vcet/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-yellow)] transition-colors text-[var(--color-maroon)]"
+            >
+              <Instagram className="w-8 h-8" />
+            </a>
+            <a
+              href="https://www.linkedin.com/company/mlsc-vcet/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="hover:text-[var(--color-yellow)] transition-colors text-[var(--color-maroon)]"
+            >
+              <Linkedin className="w-8 h-8" />
+            </a>
+          </div>
         </motion.div>
+
 
 
         <div className="body scale-70 lg:scale-80">
