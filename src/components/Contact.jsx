@@ -15,7 +15,7 @@ export default function Contact() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 gap-10 w-full max-w-6xl">
         {/* Left Side - Contact Info */}
-        <div className="flex flex-col gap-6 border-4 border-black bg-mint p-6 shadow-[8px_8px_0px_#001219] ">
+        <div className="flex flex-col gap-3 border-4 border-black bg-mint p-6 shadow-[8px_8px_0px_#001219] ">
           <h3 className="text-xl md:text-2xl font-bold text-black flex items-center gap-2">
             <MapPin size={50} className="text-black" />
             Vidyavardhini's College of Engineering and Technology
@@ -25,37 +25,61 @@ export default function Contact() {
             Maharashtra 401202
           </p>
 
-          <h4 className="text-lg md:text-xl font-bold text-black mt-4 flex items-center gap-2">
+          <h4 className="text-lg md:text-xl font-bold text-black mt-2 flex items-center gap-2">
             <Phone size={22} className="text-black" />
             For Enquiries:
           </h4>
-          <ul className="space-y-2 text-black font-medium ">
+          <ul className="space-y-1 text-black font-medium ">
             <li>
-              Dnyanesh Panchal:{" "}
-              <a href="tel:+919321667147" className="underline text-maroon">
-                +91 93216 67147
+              Parth Raut:{" "}
+              <a href="tel:+919224668114" className="underline text-maroon">
+                +91 92246 68114
               </a>
             </li>
             <li>
-              Ayush Mayekar:{" "}
-              <a href="tel:+918657153773" className="underline text-maroon">
-                +91 86571 53773
+              Sharvari Tathe:{" "}
+              <a href="tel:+917770017919" className="underline text-maroon">
+                +91 77700 17919
+              </a>
+            </li>
+            <li>
+              Gayatri Sabat:{" "}
+              <a href="tel:+919890740720" className="underline text-maroon">
+                +91 98907 40720
               </a>
             </li>
           </ul>
 
-          <p className="mt-4 font-medium flex items-center gap-2">
+          <p className="text-lg md:text-xl font-bold text-black flex items-center gap-2">
             <Mail size={22} className="text-black" />
-            <span>
-              Email:{" "}
-              <a
-                href="mailto:mlsc@vcet.edu.in"
-                className="underline text-pastel-pink font-bold"
-              >
-                mlsc@vcet.edu.in
-              </a>
-            </span>
+            <span>Email: </span>
           </p>
+          <ul className="space-y-1 font-medium ">
+            <li>
+              <a
+                href="mailto:parth.232473101@vcet.edu.in"
+                className="underline text-[var(--color-maroon)] font-semibold text-sm lg:text-auto"
+              >
+                parth.232473101@vcet.edu.in
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:sharvari.232813201@vcet.edu.in"
+                className="underline text-[var(--color-maroon)] font-semibold text-sm lg:text-auto"
+              >
+                sharvari.232813201@vcet.edu.in
+              </a>
+            </li>
+            <li>
+              <a
+                href="mailto:gayatri.235396208@vcet.edu.in"
+                className="underline text-[var(--color-maroon)] font-semibold text-sm lg:text-auto"
+              >
+                gayatri.235396208@vcet.edu.in
+              </a>
+            </li>
+          </ul>
         </div>
 
         {/* Right Side - Map */}

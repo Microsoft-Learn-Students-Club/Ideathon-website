@@ -37,7 +37,7 @@
   }
 
   .body {
-    @apply container mx-auto lg:absolute lg:left-1/2 lg:-translate-x-1/2 lg:bottom-20 top-auto md:top-[30vh] block lg:flex justify-between items-end px-5;
+    @apply container mx-auto lg:absolute lg:-left-20 lg:bottom-10 top-auto md:top-[30vh] block lg:flex justify-between items-end px-5;
 
     .content {
       @apply flex lg:flex-row flex-col pt-10 lg:pt-55 w-full gap-10 justify-between items-center lg:items-end mx-auto transition-all ease-in-out;

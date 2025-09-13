@@ -1,5 +1,8 @@
 import { useState } from "react";
 import bookmark from "../assets/prizes/bookmark.png";
+import goldTrophy from "../assets/prizes/gold.png";
+import silverTrophy from "../assets/prizes/silver.png";
+import participants from "../assets/prizes/participants.png";
 
 const COLORS = {
   blue: "var(--color-teal)", // primary
@@ -15,19 +18,19 @@ const COLORS = {
 };
 
 const TROPHIES = {
-  "Winner": "src/assets/prizes/gold.png",
-  "Runner-up": "src/assets/prizes/silver.png",
-  "2nd Runner-up": "src/assets/prizes/bronze.png",
+  "Winner": goldTrophy,
+  "Runner-up": silverTrophy,
+  "All Participants": participants,
 };
 
 const DEFAULT_AMOUNTS = {
-  "Winner": "₹15,000",
-  "Runner-up": "₹7,500",
-  "2nd Runner-up": "₹4,000",
+  "Winner": "₹4,000",
+  "Runner-up": "₹3,000",
+  "All Participants": "Networking",
 };
 
 function FilterTabs({ value, onChange }) {
-  const options = ["Winner", "Runner-up", "2nd Runner-up"];
+  const options = ["Winner", "Runner-up", "All Participants"];
   return (
     <div
       className="hidden sm:flex flex-wrap items-center gap-2 sm:gap-3"
@@ -65,11 +68,11 @@ function PrizeCard({ rank, imgSrc, highlight, amount, onHover, onLeave }) {
   const bgMap = {
     "Winner": COLORS.maroon,
     "Runner-up": COLORS.coral,
-    "2nd Runner-up": COLORS.blue,
+    "All Participants": COLORS.blue,
   };
 
   const cardBg = bgMap[rank] || COLORS.cream;
-  const isSecond = rank === "2nd Runner-up";
+  const isSecond = rank === "All Participants";
   const isRunner = rank === "Runner-up";
   const isWinner = rank === "Winner";
 
@@ -77,7 +80,7 @@ function PrizeCard({ rank, imgSrc, highlight, amount, onHover, onLeave }) {
     <div
       onMouseEnter={() => onHover(rank)}
       onMouseLeave={onLeave}
-      className="relative rounded-xl border-[4px] p-6 md:p-7 lg:p-8 flex flex-col items-center text-center justify-between cursor-pointer transition-all duration-300"
+      className="lg:w-[500px] relative rounded-xl border-[4px] p-6 md:p-7 lg:p-8 flex flex-col items-center text-center justify-between cursor-pointer transition-all duration-300"
       style={{
         backgroundColor: cardBg,
         borderColor: COLORS.black,
@@ -128,7 +131,7 @@ function PrizeCard({ rank, imgSrc, highlight, amount, onHover, onLeave }) {
 
       <img
         src={imgSrc || "/placeholder.svg"}
-        alt={`${rank} trophy`}
+        alt={`${rank}`}
         width={140}
         height={140}
         className="mt-6 mx-auto block h-auto w-28 sm:w-36"
@@ -162,7 +165,7 @@ export default function Prizes({ amounts = {} }) {
   const getAmount = (rank) =>
     amounts && amounts[rank] ? amounts[rank] : DEFAULT_AMOUNTS[rank];
 
-  // 👑 Order changed → Winner → Runner-up → 2nd Runner-up
+  // 👑 Order changed → Winner → Runner-up → All Participants
   const items = [
     { rank: "Winner", imgSrc: TROPHIES["Winner"], amount: getAmount("Winner") },
     {
@@ -171,9 +174,9 @@ export default function Prizes({ amounts = {} }) {
       amount: getAmount("Runner-up"),
     },
     {
-      rank: "2nd Runner-up",
-      imgSrc: TROPHIES["2nd Runner-up"],
-      amount: getAmount("2nd Runner-up"),
+      rank: "All Participants",
+      imgSrc: TROPHIES["All Participants"],
+      amount: getAmount("All Participants"),
     },
   ];
 
@@ -208,7 +211,7 @@ export default function Prizes({ amounts = {} }) {
           </div>
         </header>
 
-        <div className="flex justify-center gap-6 flex-wrap">
+        <div className="flex justify-center gap-10 flex-wrap">
           {items.map((item) => (
             <div
               key={item.rank}

@@ -1,10 +1,10 @@
 import React from 'react';
 import { motion } from 'framer-motion';
-import AI from "../assets/AI.png";
-import Dev from "../assets/Webdev.png";
-import Blockchain from "../assets/Blockchain.png";
-import Mobile from "../assets/Mobile.png";
-import Social from "../assets/Social.png";
+// import AI from "../assets/AI.png";
+// import Dev from "../assets/Webdev.png";
+// import Blockchain from "../assets/Blockchain.png";
+// import Mobile from "../assets/Mobile.png";
+// import Social from "../assets/Social.png";
 import Tape1 from "../assets/tape1.png";
 import Tape2 from "../assets/tape2.png";
 
@@ -13,27 +13,27 @@ const Domains = () => {
         {
             title: 'Artificial Intelligence',
             description: 'Explore machine learning, computer vision, and natural language processing.',
-            image: AI,
+            // image: AI,
         },
         {
             title: 'Web Development',
             description: 'Build full-stack web applications using modern frameworks and technologies.',
-            image: Dev,
+            // image: Dev,
         },
         {
             title: 'Blockchain & FinTech',
             description: 'Innovate with decentralized applications and financial technology solutions.',
-            image: Blockchain,
+            // image: Blockchain,
         },
         {
             title: 'Mobile Applications',
             description: 'Create native or cross-platform mobile apps for iOS and Android.',
-            image: Mobile,
+            // image: Mobile,
         },
         {
             title: 'Social Good',
             description: 'Develop projects that address real-world problems and make a positive impact.',
-            image: Social,
+            // image: Social,
         },
     ];
 
