@@ -15,7 +15,7 @@ export default function App() {
         <Route path="/" element={<Home />} />
         <Route path="/shortlisted-teams" element={<ShortlistedTeams />} />
       </Routes>
-      {/* <Footer /> */}
+      <Footer />
     </Router>
 
     <Chatbot/>
