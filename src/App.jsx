@@ -4,9 +4,11 @@ import Footer from "./components/Footer";
 import Navbar from "./components/Navbar";
 import ShortlistedTeams from "./components/ShortlistedTeams";
 import Home from "./pages/Home";
+import Chatbot from "./components/Chatbot";
 
 export default function App() {
   return (
+   <>
     <Router>
       <Navbar />
       <Routes>
@@ -15,5 +17,8 @@ export default function App() {
       </Routes>
       <Footer />
     </Router>
+
+    <Chatbot/>
+   </>
   );
 }
